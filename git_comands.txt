@@ -1,6 +1,6 @@
 1) git inint
 
-2) git statug
+2) git status
 
 3) git log
 
