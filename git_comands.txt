@@ -40,6 +40,8 @@
 
 21) git checkout <branch name> <file name>  (стащить себе файл с ветки)
 
+22) git reset --hard <commit name>
+
 22) git add -A  (добавление всех файлов)
 
 23) git blame (узнать, кто совершил ошибку)
