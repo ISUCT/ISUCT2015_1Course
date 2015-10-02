@@ -2,11 +2,11 @@
 
 2) git status
 
-3) git log
+3) git log (показать комиты)
 
-4) git add <file name> or git add '*.<file format>'
+4) git add <file name> or git add '*.<file format>' (добавить файлы для отслеживания)
 
-5) git commit -m 'name of what you've done'
+5) git commit -m 'name of what you've done' 
 
 6) git remote add origin <adress> (заливка удаленного [локальнго] репозитория)
 
