@@ -1,5 +1,5 @@
-puplic class MyFirstApp {
-    Puplic static void main (String[] args){
-         System.out.print ("Hello world");
+public class MyFirstApp {
+    public static void main (String[] args){
+         System.out.println("Braikovskaya Maria Andreevna");
     }
-)
+}
