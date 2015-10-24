@@ -28,5 +28,25 @@ public class LabWorks {
 //        double
         
         //.....
+        Dog a = new Dog();
+        a.name = "Шарик";
+        a.age = 2;
+        a.isHungry = false;
+        a.voice();
+        //......
+        
+        Dog[] dogs = new Dog[3];
+        
+        dogs[0] = new Dog();
+        dogs[0].name = "Джек";
+        dogs[0].age = 3;
+        dogs[0].isHungry = true;
+        //.......
+        
+        int i = 0;
+        while(i<dogs.length){
+            dogs[i].voice();
+            i=i+1;
+        }
     }
 }

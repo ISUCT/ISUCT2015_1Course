@@ -9,20 +9,28 @@ package labworks;
  * @author jskonst
  */
 public class Dog {
+
     String name;
     int age;
     boolean isHungry;
-    
-    public void voice(){
-        System.out.println("Меня зовут " + name +
-                ", мне " + age + "лет");
+
+    public void voice() {
+        System.out.println("Меня зовут " + name
+                + ", мне " + age + "лет");
     }
-    public void isHungry(){
-        if (isHungry){
+
+    public void isHungry() {
+        if (isHungry) {
             System.out.println("Голоден");
-        }else{
+        } else {
             System.out.println("Сыт");
         }
     }
+
+    public void chaseCat() {
+        System.out.println("Ловит кошку");
+    }
+    
+    
     
 }
