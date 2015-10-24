@@ -30,7 +30,45 @@ public class LabWorks {
         System.out.println (someFloat);
         double someDouble = 7;
         System.out.print (someDouble);
-                
-    } 
+   
+        Elephant a = new Elephant();
+        a.name = "Григорий";
+        a.age = 2;
+        a.isHungry = false;
+        a.drinking();
+        //...
+        
+        
+        
+        Elephant[] elephants = new Elephant[3];
+        
+        elephants[0] = new Elephant();
+        elephants[0].name = "Миша";
+        elephants[0].age = 3;
+        elephants[0].isHungry = true;
+        
+        elephants[1] = new Elephant();
+        elephants[1].name = "Саша";
+        elephants[1].age = 4;
+        elephants[1].isHungry = true;
+        
+        elephants[2] = new Elephant();
+        elephants[2].name = "Ваня";
+        elephants[2].age = 5;
+        elephants[2].isHungry = true;
+        
+        
+        
+        int i = 0;
+        while(i<elephants.length){
+            elephants[i].drinking();
+            i=i+1;
+            
+            
+        }
+        
+       
+        }   
+  
 }
    
