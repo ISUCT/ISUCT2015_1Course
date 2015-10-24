@@ -34,34 +34,44 @@ public class LabWorks {
 
 
 
-        Pikachu a = new Pikachu();
-        a.name = "312";
-        a.age = 12;
-        a.lightningStrike = true;
+ Pokemon a = new Pokemon();
+        a.number = 017;
+        a.evolvesfrom = "Egg";
+        a.evolution = true;
         a.voice();
-        //один пикачу
+ Pokemon c = new Pokemon();
+        c.number = 128;
+        c.evolvesfrom = "Vulpix";
+        c.evolution = false;
+        c.voice();
 
+ Pokemon d = new Pokemon();
+        d.number = 144;
+        d.evolvesfrom = "Machoke";
+        d.evolution = true;
+        d.voice();
 
-        Pikachu[] pikachues = new Pikachu[3];
-        pikachues[0] = new Pikachu();
-        pikachues[0].name = "420";
-        pikachues[0].age = 16;
-        pikachues[0].lightningStrike = false;
+        Pokemon[] pokemons = new Pokemon[3];
+        pokemons[0] = new Pokemon();
+        pokemons[0].number = 017;
+        pokemons[0].evolvesfrom = "Egg";
+        pokemons[0].evolution = true;
         
-        pikachues[1] = new Pikachu();
-        pikachues[1].name = "20";
-        pikachues[1].age = 3;
-        pikachues[1].lightningStrike = false;
+        pokemons[1] = new Pokemon();
+        pokemons[1].number = 128;
+        pokemons[1].evolvesfrom = "Vulpix";
+        pokemons[1].evolution = false;
         
-        pikachues[2] = new Pikachu();
-        pikachues[2].name = "666";
-        pikachues[2].age = 6;
-        pikachues[2].lightningStrike = true;
-        //больше пикачу   
+        pokemons[2] = new Pokemon();
+        pokemons[2].number = 144;
+        pokemons[2].evolvesfrom = "Machoke";
+        pokemons[2].evolution = true;
+    
+        
 
         int i = 0;
-        while (i < pikachues.length) {
-            pikachues[i].voice();
+        while (i < pokemons.length) {
+            pokemons[i].voice();
             i = i + 1;
         }
     }
