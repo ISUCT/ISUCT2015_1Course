@@ -15,9 +15,18 @@ public class LabWorks {
      */
     public static void main(String[] args) {
         boolean logic = true; //false
-        System.out.println(logic);
         char charVar = 'a';
+        byte b = 12;
+        
+        System.out.println(logic);
         System.out.println(charVar);
+        System.out.println(b);
+//        short
+//        int
+//        long
+//        float
+//        double
+        
         //.....
     }
 }
