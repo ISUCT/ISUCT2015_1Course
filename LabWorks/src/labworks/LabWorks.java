@@ -13,22 +13,50 @@ public class LabWorks {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
         boolean logic = true; //false
-        System.out.println(logic);
         char charVar = 'a';
+        byte b = 12;
+        System.out.println(logic);
         System.out.println(charVar);
-        byte someByte = 12;
-        System.out.println(someByte);
-        short someShort = 13;
-        System.out.println(someShort);
-        int someInt = 14;
-        System.out.println(someInt);
-        long someLong = 15;
-        System.out.println(someLong);
-        float someFloat = 16;
-        System.out.println(someFloat);
-        double someDouble = 17;
-        System.out.println(someDouble);
+        System.out.println(b);
+//           short        
+//           int        
+//           long
+//           float
+//           double
+        
+        Mouse a = new Mouse();
+        a.name = "Микки";
+        a.age = 1;
+        a.isAngry = true;
+        a.voice();
+        
+        Mouse[] mouses = new Mouse[3];
+        mouses[0] = new Mouse();
+        mouses[0].name = "Миуф";
+        mouses[0].age = 2;
+        mouses[0].isAngry = false;
+       
+        mouses[1] = new Mouse();
+        mouses[1].name = "Джек";
+        mouses[1].age = 1;
+        mouses[1].isAngry = false;
+        
+        mouses[2] = new Mouse();
+        mouses[2].name = "Джон";
+        mouses[2].age = 1;
+        mouses[2].isAngry = true;
+        
+        int i = 0;
+        while(i<mouses.length){
+            mouses[i].voice();
+            i=i+1;
+        }
+        
+        
+        
+        
     }
 }
