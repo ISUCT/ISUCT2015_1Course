@@ -35,21 +35,11 @@ public class LabWorks {
 
 
  Pokemon a = new Pokemon();
-        a.number = 017;
-        a.evolvesfrom = "Egg";
+        a.number = 026;
+        a.evolvesfrom = "Pikachu";
         a.evolution = true;
         a.voice();
- Pokemon c = new Pokemon();
-        c.number = 128;
-        c.evolvesfrom = "Vulpix";
-        c.evolution = false;
-        c.voice();
 
- Pokemon d = new Pokemon();
-        d.number = 144;
-        d.evolvesfrom = "Machoke";
-        d.evolution = true;
-        d.voice();
 
         Pokemon[] pokemons = new Pokemon[3];
         pokemons[0] = new Pokemon();
