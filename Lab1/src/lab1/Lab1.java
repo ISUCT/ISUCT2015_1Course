@@ -32,11 +32,5 @@ public class Lab1 {
         System.out.println(z);
         double k = 3242.11;
         System.out.println(k);
-        
-        
-        
-        
-        
     }
-    
-}
+}    
