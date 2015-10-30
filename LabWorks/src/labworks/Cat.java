@@ -24,7 +24,7 @@ public class Cat {
             System.out.println("Голоден");
         } else {
             System.out.println("Cыт");
-            
+
         }
     }
 }

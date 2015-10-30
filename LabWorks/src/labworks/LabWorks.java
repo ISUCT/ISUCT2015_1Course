@@ -42,39 +42,38 @@ public class LabWorks {
 
 
 
-Cat a = new Cat();
-a.name = "Пушок";
-a.age = 3;
-a.isHungry = false;
-a.voice();
+        Cat a = new Cat();
+        a.name = "Пушок";
+        a.age = 3;
+        a.isHungry = false;
+        a.voice();
 //...
 
-Cat[] cats = new Cat[3];
+        Cat[] cats = new Cat[3];
 
-cats[0] = new Cat();
-cats[0].name = "Рыжик" ;
-cats[0].age = 5;
-cats[0].isHungry = true;
+        cats[0] = new Cat();
+        cats[0].name = "Рыжик";
+        cats[0].age = 5;
+        cats[0].isHungry = true;
 
-cats[1] = new Cat();
-cats[1].name = "Мася";
-cats[1].age = 7;
-cats[1].isHungry = true;
+        cats[1] = new Cat();
+        cats[1].name = "Мася";
+        cats[1].age = 7;
+        cats[1].isHungry = true;
 
-cats[2] = new Cat();
-cats[2].name = "Вася";
-cats[2].age = 16;
-cats[2].isHungry = true;
+        cats[2] = new Cat();
+        cats[2].name = "Вася";
+        cats[2].age = 16;
+        cats[2].isHungry = true;
 //...
-int i = 0;
-while(i<cats.length){
-    cats[i].voice();
-    i = i + 1;
-    
-}
+        int i = 0;
+        while (i < cats.length) {
+            cats[i].voice();
+            i = i + 1;
+
+        }
 
 
-        
+
     }
 }
-
