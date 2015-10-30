@@ -13,7 +13,7 @@ public class Elephant {
     int age;
     boolean isHungry;
    
-    public void drinking() {
+    public void aboutme() {
         System.out.println("Меня зовут" + name + " , мне" + age + "лет");
     }
     public void isHungry() {

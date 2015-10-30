@@ -35,7 +35,7 @@ public class LabWorks {
         a.name = "Григорий";
         a.age = 2;
         a.isHungry = false;
-        a.drinking();
+        a.aboutme();
         //...
         
         
@@ -61,7 +61,7 @@ public class LabWorks {
         
         int i = 0;
         while(i<elephants.length){
-            elephants[i].drinking();
+            elephants[i].aboutme();
             i=i+1;
             
             
