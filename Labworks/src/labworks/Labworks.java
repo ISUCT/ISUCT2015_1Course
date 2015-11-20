@@ -31,6 +31,34 @@ public class Labworks {
         System.out.println(f);
         double d = 125;
         System.out.println(d);
+   
+    Book a = new Book();
+    a.name = "Война и мир";
+    a.pages = 2000;
+    a.isReaded = false;
+    a.author();
+    //......
+    
+    
+    Book[] books = new Book[3];
+    books[0].name = "Этюд в багровых тонах";
+    books[0].pages = 150;
+    books[0].isReaded = true;
+    
+    books[1].name = "Граф Монте-Кристо";
+    books[1].pages = 1200;
+    books[1].isReaded = false;
+    
+    books[2].name = "Великий Гэтсби";
+    books[2].pages = 450;
+    books[2].isReaded = true;
+    
+    int i = 0;
+    while(i<books.length){
+        books[i].author();
+        i=i+1;
+        
+    }
     }   
         
 }
