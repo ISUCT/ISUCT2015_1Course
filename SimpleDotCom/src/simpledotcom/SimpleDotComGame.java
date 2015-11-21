@@ -14,6 +14,21 @@ public class SimpleDotComGame {
     int[] locationCells;
     int numOfHits = 0;
     
+    /**
+     * 
+     * @param locs 
+     */
+    
+    public void setLocationCells(int[] locs) {
+        locationCells = locs;
+    }  
+    
+    /**
+     * 
+     * @param stringGuess
+     * @return 
+     */
+    
     public String checkYourself(String stringGuess) {
         int guess = Integer.parseInt(stringGuess);
         String result = "мимо";
@@ -28,10 +43,9 @@ public class SimpleDotComGame {
         if (numOfHits == locationCells.length) {
             result = "потопил";
         }
+        System.out.println(result);
         return result;
     }
     
-    public void setLocationCells(int[] locs) {
-        locationCells = locs;
-    }
+
 }

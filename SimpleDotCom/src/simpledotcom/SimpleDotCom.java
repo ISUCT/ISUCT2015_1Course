@@ -10,6 +10,11 @@ package simpledotcom;
  * @author anastasia
  */
 public class SimpleDotCom {
+    
+/**
+ * 
+ * @param args 
+ */    
     public static void main (String[] args) {
         SimpleDotCom dot = new SimpleDotCom();        
         int[] locations = {2,3,4};
