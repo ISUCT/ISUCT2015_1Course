@@ -69,7 +69,7 @@ public class DotComBust {
         while(!dotComsList.isEmpty()) {
             
             String userGuesses = helper.getUserInput("Сделайте ход");
-            checkUserGuess(userGuess);
+            checkUserGuess(userGuesses);
             
         }
         
