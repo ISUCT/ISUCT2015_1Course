@@ -77,19 +77,19 @@ public class DotComBust {
     }
     
     private void finishGame() {
-        
-        System.out.println("ПОЗДРАВЛЯЕМ! Вы потопили все сайты! Ваши акции теперь ничего не стоят...");
-        
+                
         if (numOfHits <= 18) {
             
+            System.out.println("ПОЗДРАВЛЯЕМ! Вы потопили все сайты! Ваши акции теперь ничего не стоят...");
             System.out.println("Вы использовали " + numOfHits + " выстрелов");
             System.out.println("Молодцы!");
         
         } else {
             
-            System.out.println("Слишком много промахов! " + numOfHits + " мазила");
+            System.out.println("И хотя вы потопили все сайты... ");
+            System.out.println("Слишком много промахов! " + numOfHits + " - мазила");
             System.out.println("Вы никудышный бизнесмен");
-            
+          
         }    
     }
 }

@@ -6,16 +6,8 @@ package simpledotcom;
  */
 import java.util.*;
 
-/**
- *
- * @author anastasia
- */
 public class SimpleDotComGame {
 
-    /**
-     *
-     * @param args
-     */
     public static void main (String[] args) {
         int numOfGuesses = 0;
         GameHelper helper = new GameHelper();

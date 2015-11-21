@@ -14,9 +14,9 @@ import java.util.*;
 public class GameHelper {
     
     private static final String alphabet = "abcdefg";
-    private final int gridLength = 7;
-    private final int gridSize = 49;
-    private final int [] grid = new int[gridSize];
+    private int gridLength = 7;
+    private int gridSize = 49;
+    private int [] grid = new int[gridSize];
     private int comCount = 0;
     
     public String getUserInput(String promt) {
@@ -43,7 +43,7 @@ public class GameHelper {
     
     public ArrayList<String> placeDotCom(int comSize) {
         
-        ArrayList<String> alphaCells = new ArrayList<>();
+        ArrayList<String> alphaCells = new ArrayList<String>();
         String [] alphacoords = new String [comSize];
         String temp = null;
         int [] coords = new int[comSize];
@@ -92,6 +92,7 @@ public class GameHelper {
             
             alphaCells.add(temp.concat(Integer.toString(row)));
             x++;
+            // System.out.println(" coord "+x" = " + alphaCells.get(x-1));
         }
         
         return alphaCells;
