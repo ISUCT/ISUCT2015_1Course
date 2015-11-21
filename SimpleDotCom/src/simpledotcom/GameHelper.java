@@ -10,7 +10,18 @@ package simpledotcom;
  * @author anastasia
  */
 import java.io.*;
+
+/**
+ *
+ * @author anastasia
+ */
 public class GameHelper {
+
+    /**
+     *
+     * @param promt
+     * @return
+     */
     public String getUserInput(String promt) {
         String inputLine = null;
         System.out.print(promt + " ");

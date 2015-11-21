@@ -1,19 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledotcom;
 
 /**
  *
  * @author anastasia
  */
+import java.util.*;
+
+/**
+ *
+ * @author anastasia
+ */
 public class SimpleDotComGame {
+
     /**
- * 
- * @param args 
- */    
+     *
+     * @param args
+     */
     public static void main (String[] args) {
         int numOfGuesses = 0;
         GameHelper helper = new GameHelper();

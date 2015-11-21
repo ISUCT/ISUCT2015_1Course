@@ -23,3 +23,5 @@ hs_err_pid*
 /LabWorks/dist/
 >>>>>>> 50c4dde2286a24e529b3e1333f7c6c3021c286a2
 /SimpleDotCom/build/
+/DotCom/nbproject/private/
+/DotCom/build/
