@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class GameHelper {
     
-    private static final String alphabet = "abcdefg";
+    private static final String alphabet = "ABCDEFG";
     private int gridLength = 7;
     private int gridSize = 49;
     private int [] grid = new int[gridSize];
@@ -62,6 +62,9 @@ public class GameHelper {
         while(!success & attempts++ < 200) {
             
             location = (int) (Math.random() * gridSize);
+            
+            //System.out.println("Пробуем " + location);
+            
             int x = 0;
             success = true;
             
@@ -70,10 +73,18 @@ public class GameHelper {
                 if (grid[location] == 0) {
                     
                     coords[x++] = location;
+                    location += incr;
+                    
+                    if (location >= gridSize) {
+                        
+                        success = false;
+                    }
                     
                     if (x>0 && (location % gridLength == 0)) {
                         
                         success = false;
+                        
+                        //System.out.println("Используется " + location);
                     }
                 }
             }
@@ -82,6 +93,8 @@ public class GameHelper {
         int x = 0;
         int row = 0;
         int column = 0;
+        
+        //System.out.println("\n");
         
         while (x < comSize) {
             
@@ -92,8 +105,11 @@ public class GameHelper {
             
             alphaCells.add(temp.concat(Integer.toString(row)));
             x++;
-            // System.out.println(" coord "+x" = " + alphaCells.get(x-1));
+            
+            //System.out.println(" coord "+x+" = " + alphaCells.get(x-1));
         }
+        
+        //System.out.println("\n");
         
         return alphaCells;
     }

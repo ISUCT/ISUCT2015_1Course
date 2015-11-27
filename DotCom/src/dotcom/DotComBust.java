@@ -34,8 +34,8 @@ public class DotComBust {
         dotComsList.add(b);
         dotComsList.add(c);
         
-        System.out.println("Ваша цель - потопить все три сайта");
-        System.out.println("Puppies.com, WeirdDolls.net and Libre.com");
+        System.out.println("Ваша цель - потопить все три сайта: ");
+        System.out.println("Puppies.com, WeirdDolls.net и Libre.com");
         System.out.println("Чем меньше ходов - тем лучше");
         
         for (DotCom dotComToSet : dotComsList) {
@@ -68,7 +68,7 @@ public class DotComBust {
         
         while(!dotComsList.isEmpty()) {
             
-            String userGuesses = helper.getUserInput("Сделайте ход");
+            String userGuesses = helper.getUserInput("Сделайте ход и нажмите Enter ");
             checkUserGuess(userGuesses);
             
         }

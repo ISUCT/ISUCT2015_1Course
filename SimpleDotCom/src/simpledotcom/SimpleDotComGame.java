@@ -23,7 +23,7 @@ public class SimpleDotComGame {
             numOfGuesses++;
             if (result.equals ("потопил")) {
                 isAlive = false;
-                System.out.println("Вам потребовалось" + numOfGuesses + "попыток(и)");
+                System.out.println("Вам потребовалось " + numOfGuesses + " попыток(и)");
             }
         }
     }    
