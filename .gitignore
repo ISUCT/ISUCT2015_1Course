@@ -32,3 +32,9 @@ hs_err_pid*
 /DotCom/build/
 >>>>>>> c0660ee74655ba4c9e963a3687654a26afdadef4
 /DotCom/dist/
+/SimpleDotCom/dist/
+/Lab1/dist/
+/Lab2/dist/
+/Lab2_1/nbproject/private/
+/FindCats/nbproject/private/
+/FindCats/build/

@@ -7,10 +7,14 @@ package simpledotcom;
 public class SimpleDotCom {
     int[] locationCells;
     int numOfHits = 0;
-
+    
     public void setLocationCells(int[] locs) {
         locationCells = locs;
     }  
+    
+    public void startGame() {
+         System.out.println("Ваша задача - потопить WeirdDolls.net");
+    }
     
     public String checkYourself(String stringGuess) {
         int guess = Integer.parseInt(stringGuess);
