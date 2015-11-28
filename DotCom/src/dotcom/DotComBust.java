@@ -25,10 +25,10 @@ public class DotComBust {
         a.setName ("Puppies.com");
 
         DotCom b = new DotCom();
-        a.setName ("WeirdDolls.net");
+        b.setName ("WeirdDolls.net");
         
         DotCom c = new DotCom();
-        a.setName ("Libre.com");        
+        c.setName ("Libre.com");        
         
         dotComsList.add(a);
         dotComsList.add(b);
@@ -42,7 +42,10 @@ public class DotComBust {
             
             ArrayList<String> newLocation = helper.placeDotCom(3);
             dotComToSet.setLocationCells(newLocation);
-        }    
+            System.out.println(newLocation);
+        }   
+        
+        
     }
     
     private void checkUserGuess(String userGuess) {
@@ -53,6 +56,10 @@ public class DotComBust {
         for (DotCom dotComToTest : dotComsList) {
             
             result = dotComToTest.checkYourself(userGuess);
+            
+            if (result.equals("попал")) {
+                break;
+            }
                     
             if (result.equals ("потопил")) {
                 

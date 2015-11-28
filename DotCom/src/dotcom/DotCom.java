@@ -8,7 +8,7 @@ import java.util.*;
 
 public class DotCom {
 
-    private String name;
+    public String name;
     private ArrayList<String> locationCells;
     
     public void setLocationCells(ArrayList<String> loc) {
@@ -33,7 +33,7 @@ public class DotCom {
             if (locationCells.isEmpty()) {
                 
                 result = "потопил";
-                System.out.println("Вы потопили " + name + " : ( ");
+                System.out.println("Вы потопили " + name);
             
             } else {
             
