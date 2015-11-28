@@ -34,6 +34,7 @@ public class DotComBust {
             ArrayList<String> newLocation = helper.placeDotCom(3);
             
             dotComSet.setLocationCells(newLocation);
+            System.out.println(newLocation);
         }
     }
 
