@@ -13,8 +13,8 @@ import java.util.*;
 
 public class DotComBust {
 
-    private final GameHelper helper = new GameHelper();
-    private final ArrayList<DotCom> dotComsList = new ArrayList<>();
+    private GameHelper helper = new GameHelper();
+    private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
     private int numOfGuesses = 0;
 
     private void setUpGame() {
@@ -34,6 +34,7 @@ public class DotComBust {
         for (DotCom dotComSet : dotComsList) {
             ArrayList<String> newLocation = helper.placeDotCom(3);
             dotComSet.setLocationCells(newLocation);
+            System.out.println(newLocation);
         }
     }
 

@@ -20,6 +20,11 @@ public class DotCom {
         locationCells = loc;
     }
 
+    public void setName(String n) {
+        name = n;
+
+    }
+
     public String checkYourself(String userInput) {
         String result = "Мимо";
         int index = locationCells.indexOf(userInput);
@@ -27,15 +32,11 @@ public class DotCom {
             locationCells.remove(index);
             if (locationCells.isEmpty()) {
                 result = "Потопил";
+                System.out.println("Ой! Вы попали в " + name + " :(");
             } else {
                 result = "Попал";
             }
         }
         return result;
     }
-
-    void setName(String puppycom) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
 }
-
