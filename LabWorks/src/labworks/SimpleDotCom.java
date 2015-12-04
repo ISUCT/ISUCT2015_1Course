@@ -35,7 +35,7 @@ public class SimpleDotCom {
         System.out.println(result);
             return result;
     } // Завершаем метод
-// Завершаем класс
+}// Завершаем класс
     
     
     
