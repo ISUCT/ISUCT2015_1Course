@@ -37,6 +37,8 @@ public class DotComBust {
            ArrayList<String> newLocation = helper.placeDotCom(3);
            
            dotComToSet.setLocationCells(newLocation);
+           System.out.println(newLocation);
+           
            
     } // Конец цикла
 } // Конец метода setUpgame 
