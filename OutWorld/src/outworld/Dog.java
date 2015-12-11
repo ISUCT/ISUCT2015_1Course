@@ -1,8 +1,7 @@
 package outworld;
 
-public class Dog extends Canin {
-    public void voice() {
-        System.out.println("I am a " + animal);
-        System.out.println("My name is " + name);
-}
+public class Dog extends Canine {
+    public void makeNoice() {
+        System.out.println("Woof");
+    }
 }

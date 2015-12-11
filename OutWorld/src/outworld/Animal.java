@@ -1,23 +1,21 @@
 package outworld;
 
-public class Animal {
+abstract class Animal {
     
     Boolean isHungry;
-    String name;
-    String animal;
 
     public void voice() {
-        System.out.println(animal + " shout:");
-        System.out.println("'I am an animal'");
-        System.out.println("My name is " + name);        
+        System.out.println(getClass() + " shout:");
+        System.out.println("'I am the " + hashCode() + "'");        
     }
 
     public void eat() {
-        System.out.println(name + " is eating");
+        System.out.println(hashCode() + " is eating");
     }
 
     public void walkAround() {
-        System.out.println(name + " is walking around and search the food");
+        System.out.println(hashCode() + " is walking around and searching for the food");
+        makeNoice();
     }
 
     public void living() {
@@ -27,5 +25,6 @@ public class Animal {
             walkAround();
         }
     }
-
+    
+    abstract void makeNoice();
 }
