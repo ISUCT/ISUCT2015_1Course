@@ -12,3 +12,5 @@
 hs_err_pid*
 /LabWorks/nbproject/private/
 /LabWorks/build/
+/LabWorks/src/Testing/
+/LabWorks/src/labworks/
