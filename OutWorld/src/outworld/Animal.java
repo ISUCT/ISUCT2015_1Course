@@ -9,7 +9,7 @@ public class Animal {
     public void voice() {
         System.out.println(animal + " shout:");
         System.out.println("'I am an animal'");
-        System.out.println("My name is " + name);
+        System.out.println("My name is " + name);        
     }
 
     public void eat() {

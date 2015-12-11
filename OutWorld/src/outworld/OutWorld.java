@@ -10,6 +10,7 @@ public class OutWorld {
         a.voice();
         a.isHungry = true;
         a.living();
+        System.out.println(" ");        
 
 
         Animal b = new Penguin();
@@ -18,6 +19,7 @@ public class OutWorld {
         b.voice();
         b.isHungry = false;
         b.living();
+        System.out.println(" ");
         
         Animal c = new Dog();
         c.animal = "Dog";
@@ -25,6 +27,7 @@ public class OutWorld {
         a.voice();
         a.isHungry = false;
         a.living();
+        System.out.println(" ");
 
     }
 }
