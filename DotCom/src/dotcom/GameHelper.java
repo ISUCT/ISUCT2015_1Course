@@ -1,16 +1,8 @@
 package dotcom;
 
-/**
- *
- * @author anastasia
- */
 import java.io.*;
 import java.util.*;
 
-/**
- *
- * @author anastasia
- */
 public class GameHelper {
     
     private static final String alphabet = "ABCDEFG";

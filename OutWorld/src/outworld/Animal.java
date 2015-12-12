@@ -5,7 +5,7 @@ abstract class Animal {
     Boolean isHungry;
 
     public void voice() {
-        System.out.println(getClass() + " shout:");
+        System.out.println(this.toString() + " shout:");
         System.out.println("'I am the " + hashCode() + "'");        
     }
 

@@ -1,9 +1,5 @@
 package dotcom;
 
-/**
- *
- * @author anastasia
- */
 import java.util.*;
 
 public class DotComBust {
