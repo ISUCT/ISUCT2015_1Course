@@ -9,8 +9,8 @@ package наследование;
  * @author stud_17
  */
 public class Lion extends Animal{
-    private Lion[] Lions = new Lion[5];
-    private int nextIndex = 0;
+    //private Lion[] Lions = new Lion[2];
+    //private int nextIndex = 0;
     
    // public void add 
 

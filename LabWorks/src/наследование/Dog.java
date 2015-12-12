@@ -9,8 +9,8 @@ package наследование;
  * @author stud_17
  */
 public class Dog extends Animal{
-    private Dog[] Dogs = new Dog[5];
-    private int nextIndex = 0;
+   // private Dog[] Dogs = new Dog[2];
+    //private int nextIndex = 0;
 
     @Override
     public void makeNoise() {
