@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Zoo;
+import java.util.Arrays;
 
 /**
  *
@@ -11,28 +12,24 @@ package Zoo;
  */
 public class Zoo {
     public static void main(String[] args) {
-        Animal a = new Dog();
-        a.animal = "Dog";
-        a.name = "Dina";
-        a.makeNoise();
-        a.isHungry = true;
-        a.living();
-
-
-        Animal b = new Lion();
-        b.animal = "Lion";
-        b.name = "Sam";
-        b.makeNoise();
-        b.isHungry = false;
-        b.living();
+    Animal[] animals = new Animal[3];
+        animals[0] = new Dog();
+        animals[0].isHungry = true;
+        animals[0].name = "John";
         
-        Animal c = new Dog();
-        c.animal = "Dog";
-        a.name = "Marta";
-        a.makeNoise();
-        a.isHungry = false;
-        a.living();
-
+        animals[1] = new Cat();
+        animals[1].isHungry = true;
+        
+        animals[2] = new Lion();
+        animals[2].isHungry = false;
+        
+        
+        for (int i = 0; i < animals.length; i++) {
+            animals[i].makeNoise();
+            animals[i].living();
+            System.out.println("");       
+        } 
     }
-    
 }
+    
+
