@@ -10,7 +10,8 @@ package classhierarchy;
  */
 public class Dog extends Pet {
 public void sleep() {
-System.out.println("Я сплю");}
+System.out.println("Я сплю");
+}
      void voice (){
         System.out.println("Гав-гав");
     }

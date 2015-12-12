@@ -13,10 +13,13 @@ public abstract class Pet {
     int age;
     boolean hungry;
     abstract void voice();
-    public void hunder (){};
-    public void roam (){};
+    public void sleep() {}
+    public void hunder (){}
+    public void roam (){
+     System.out.println("Meow");
+    }
     void food() {
-        hungry = false;
+        hungry = true;
 }
 }   
 
