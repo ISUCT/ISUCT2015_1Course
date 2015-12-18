@@ -8,11 +8,18 @@ package Animal;
  *
  * @author stud_17
  */
-public class Animal {
-    public void eat(){}
-    public void sleep(){}
+abstract class Animal {
+    String name;
+    public void eat(){
+    System.out.println(hashCode() + " is eating"); }
+    
+    public void sleep(){
+    System.out.println(name + "sleep" ); }
     public void comeHome(){}
     public void hunger(){}
-    public void roam(){}
+    
+    public void roam(){
+   System.out.println(name + "seek the food") ;
+    }
 }
  
