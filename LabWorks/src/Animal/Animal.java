@@ -10,16 +10,17 @@ package Animal;
  */
 abstract class Animal {
     String name;
-    public void eat(){
-    System.out.println(hashCode() + " is eating"); }
+    abstract void eat();
+    
+    abstract void voice();
     
     public void sleep(){
-    System.out.println(name + "sleep" ); }
+    System.out.println(name + " sleep" ); }
     public void comeHome(){}
     public void hunger(){}
     
     public void roam(){
-   System.out.println(name + "seek the food") ;
+   System.out.println(name + " seek the food") ;
     }
 }
  

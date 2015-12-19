@@ -8,6 +8,6 @@ package Animal;
  *
  * @author stud_17
  */
-public class Feline {
-    
+abstract class Feline extends Animal {
+
 }
