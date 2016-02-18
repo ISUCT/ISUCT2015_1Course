@@ -4,20 +4,46 @@
  */
 package labworks;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  *
  * @author jskonst
  */
 public class AirPlane {
 
-    int speed;
-    String name;
-    int fuelLevel;
-    boolean isFlying;
+    private int speed;
+    private String name;
 
-    public void description() {
-        System.out.println("Борт " + name + "с "
-                + fuelLevel + "тоннами топлива");
+    public AirPlane(){
+        this("Plane",20);
+    }
+    
+    public AirPlane(String aName, int aFuelLevel){
+        this.fuelLevel = aFuelLevel;
+        this.name = aName;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFuelLevel(int fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
+    
+    private int fuelLevel;
+    private boolean isFlying;
+    
+    @Override
+    public String toString() {
+        Date a = new Date();
+        
+        return String.format("Борт %s с %s тоннами топлива", name, fuelLevel);
+        
+        
+                //"Борт " + name + " с " + fuelLevel+ " тоннами топлива";
     }
 
     public void fly() {
@@ -27,4 +53,7 @@ public class AirPlane {
     public void land() {
         isFlying = false;
     }
+    
+    
+    //issue
 }
