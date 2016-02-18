@@ -6,6 +6,7 @@ package labworks;
 
 import java.util.Calendar;
 import java.util.Date;
+import testPackage.MyMath;
 
 /**
  *
@@ -42,6 +43,6 @@ public class LabWorks {
         System.out.println(numOfMonth);
         System.out.println(totalDaysCount);
         
-        
+        System.out.println(MyMath.summ(2, 3));
     }
 }
