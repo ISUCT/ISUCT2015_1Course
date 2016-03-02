@@ -22,6 +22,8 @@ public class Difference {
         c.set(Calendar.MINUTE,0);
         c.set(Calendar.SECOND,0);
         c.set(Calendar.MILLISECOND,0);
+        
+        
         System.out.println(String.format("C %s", c.getTime()));
         Date dt = new Date();
         System.out.println(String.format("По %s",dt));       
@@ -38,8 +40,8 @@ public class Difference {
         System.out.println(totalDaysCount);
          
     }
-    public Date diff(){
-        return new Date();
+    public Date diff(Date first, Date second){
+        return new Date (second.getTime() - first.getTime());
        
         
     }
