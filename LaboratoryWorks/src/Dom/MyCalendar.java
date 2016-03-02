@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Ekaterina
  */
-public class Calendar {
+public class MyCalendar {
     public static void main(String[] args) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR,2005);

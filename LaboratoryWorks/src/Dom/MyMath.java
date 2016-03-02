@@ -10,7 +10,10 @@ package Dom;
  * @author Ekaterina
  */
 public class MyMath {
- public static int summ(int a,int b){
+     public static int summ(int a,int b){
         return a+b;
-    }   
+    }  
+     public static float summ(float a, float b){
+         return a+b;
+     }
 }
