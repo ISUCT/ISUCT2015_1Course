@@ -48,6 +48,7 @@ public class MyMathTest {
         int result = MyMath.summ(a, b);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
+   
+    
     }
 }

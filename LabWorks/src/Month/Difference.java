@@ -9,7 +9,7 @@ import java.util.Date;
  *
  * @author stud_17
  */
-public class difference {
+public class Difference {
     public static void main(String[] args) {
     Calendar c = Calendar.getInstance();
     //c.set(2015, 1,9,0,0);
@@ -36,11 +36,11 @@ public class difference {
         System.out.println(numOfYears);
         System.out.println(numOfMonth);
         System.out.println(totalDaysCount);
-        
-        
-        
-        System.out.println(MyMath.summ(2, 3));
-        
+         
+    }
+    public Date diff(){
+        return new Date();
+       
         
     }
 }
