@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Test;
+package Calendar;
 
 /**
  *
- * @author Анютка
+ * @author UI
  */
-public class MyMath {
-    public static int summ(int a, int b){
-        return a+b;
+public class TestCal {
     
-}
-
-    static float summ(float a, float b) {
-       return a+b;
-    }
 }

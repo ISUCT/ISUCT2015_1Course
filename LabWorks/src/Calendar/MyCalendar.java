@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Анютка
  */
-public class Calendar {
+public class MyCalendar {
      public static void main(String[] args) {
          Calendar cal = Calendar.getInstance();
          cal.set(Calendar.YEAR, 2005);
@@ -37,4 +37,12 @@ public class Calendar {
          System.out.println(totalDaysCount);
     
 }
+
+    private int get(int MONTH) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setTime(Date date) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
