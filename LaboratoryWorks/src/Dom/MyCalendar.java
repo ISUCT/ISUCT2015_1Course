@@ -21,6 +21,7 @@ public class MyCalendar {
         cal.set(Calendar.MINUTE,0);
         cal.set(Calendar.SECOND,0);
         cal.set(Calendar.MILLISECOND,0);
+        Date first = cal.getTime();
         System.out.println(String.format("C %s", cal.getTime()));
         Date dt = new Date();
         System.out.println(String.format("По %s",dt));       
@@ -37,6 +38,11 @@ public class MyCalendar {
         System.out.println(totalDaysCount);
         
         
+    }
+    public Date diff(Date first, Date second){
+        return new Date (second.getTime() - first.getTime());
+        
+         
     }
 }
         
