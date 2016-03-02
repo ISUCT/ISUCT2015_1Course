@@ -53,3 +53,6 @@ hs_err_pid*
 /OutWorld/build/
 /OutWorld/dist/
 /Animal/nbproject/private/
+/Calendar/nbproject/private/
+/calendarik/nbproject/private/
+/calendarik/build/
