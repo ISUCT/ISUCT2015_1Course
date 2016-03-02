@@ -14,16 +14,18 @@ package Testing;
 
 import java.util.Calendar;
 import java.util.Date;
+import Testing.Tester;
+
 
 public class Orange {
     
-
     public static void main(String[] args) {
         
         Calendar cal  = Calendar.getInstance();
-        cal.set(Calendar.YEAR,2005);
-        cal.set(Calendar.MONTH,2);
-        cal.set(Calendar.DAY_OF_MONTH,9);
+        //cal.set(2005, 0, 9,0,0);
+        cal.set(Calendar.YEAR,1997);
+        cal.set(Calendar.MONTH,6);
+        cal.set(Calendar.DAY_OF_MONTH,3);
         cal.set(Calendar.HOUR_OF_DAY,0);
         cal.set(Calendar.MINUTE,0);
         cal.set(Calendar.SECOND,0);
@@ -43,6 +45,6 @@ public class Orange {
         System.out.println(numOfMonth);
         System.out.println(totalDaysCount);
         
-        
+        System.out.println(Tester.summ(2, 3));
     }
 }
