@@ -3,10 +3,6 @@ package Month;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- *
- * @author Анютка
- */
 public class MyCalendar {
 
     public static void main(String[] args) {
