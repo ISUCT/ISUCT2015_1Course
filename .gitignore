@@ -11,26 +11,20 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-<<<<<<< HEAD
 /LabWorks/nbproject/private/
 /LabWorks/build/
-=======
-<<<<<<< HEAD
 /Lab1/nbproject/private/
 /Lab1/build/
 /Lab2/nbproject/private/
 /Lab2/build/
 /Pokemons/nbproject/private/
 /SimpleDotCom/nbproject/private/
-=======
 /LabWorks/nbproject/private/
 /LabWorks/build/
 /LabWorks/dist/
->>>>>>> 50c4dde2286a24e529b3e1333f7c6c3021c286a2
 /SimpleDotCom/build/
 /DotCom/nbproject/private/
 /DotCom/build/
->>>>>>> c0660ee74655ba4c9e963a3687654a26afdadef4
 /DotCom/dist/
 /SimpleDotCom/dist/
 /Lab1/dist/
@@ -53,6 +47,20 @@ hs_err_pid*
 /OutWorld/build/
 /OutWorld/dist/
 /Animal/nbproject/private/
+/JavaApplication9/nbproject/private/
+/JavaApplication9/build/
+/getDate/nbproject/private/
+/getDate/build/
+/GetDate2/nbproject/private/
+/GetDate2/build/
+/2plus2/nbproject/private/
+/2plus2/build
+/Exam_FEPTKV/nbproject/private/
+/Exam_FEPTKV/build/
+/Exam_FEPTKV/dist/
+/destroyTest/nbproject/private/
+/dateCal/nbproject/private/
+/dateCal/build/
 /Calendar/nbproject/private/
 /calendarik/nbproject/private/
 /calendarik/build/

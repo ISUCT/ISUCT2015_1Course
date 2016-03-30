@@ -20,6 +20,7 @@ public class OutWorld {
         
         
         for (int i = 0; i < animals.length; i++) {
+            System.out.println(animals[i]);
             animals[i].voice();
             animals[i].living();
             System.out.println("");       
