@@ -10,7 +10,7 @@ public class Calendarik {
         
         Calendar cal  = Calendar.getInstance();
         //cal.set(2005, 0, 9,0,0);
-        cal.set(DAY, MONTH, YEAR);
+        //cal.set(DAY, MONTH, YEAR);
         cal.set(Calendar.MILLISECOND,0);
         System.out.println(String.format("C %s", cal.getTime()));
         Date dt = new Date();
