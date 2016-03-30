@@ -56,7 +56,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
-                  <Component id="textField3" min="-2" pref="92" max="-2" attributes="0"/>
+                  <Component id="tztResult" min="-2" pref="92" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -79,7 +79,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="textField3" pref="31" max="32767" attributes="0"/>
+                                      <Component id="tztResult" pref="31" max="32767" attributes="0"/>
                                       <Component id="textField2" max="32767" attributes="0"/>
                                       <Component id="textField1" max="32767" attributes="0"/>
                                   </Group>
@@ -130,10 +130,13 @@
             <Property name="text" type="java.lang.String" value="="/>
           </Properties>
         </Component>
-        <Component class="java.awt.TextField" name="textField3">
+        <Component class="java.awt.TextField" name="tztResult">
           <Properties>
             <Property name="text" type="java.lang.String" value="textField3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tztResultActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
