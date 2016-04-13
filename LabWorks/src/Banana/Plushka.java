@@ -19,3 +19,6 @@ public class Plushka {
 return y;
     }
 }
+public double z(Arraylist<double>){
+Arraylist<double> n = new Arraylist<double>; 
+}
