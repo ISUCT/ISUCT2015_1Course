@@ -23,23 +23,31 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace pref="76" max="32767" attributes="0"/>
-              <Component id="txtA" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ok" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="txtB" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="txtA" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtResult" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ok" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="txtB" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtResult" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jFormattedTextField1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,7 +64,9 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="ok" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="197" max="32767" attributes="0"/>
+              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <Component id="jFormattedTextField1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,6 +108,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
