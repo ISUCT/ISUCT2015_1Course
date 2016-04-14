@@ -1,8 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
+package Test;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author stud_17
+ * @author Анютка
  */
 public class MyMathTest {
     
@@ -42,19 +43,34 @@ public class MyMathTest {
     @Test
     public void testSumm() {
         System.out.println("summ");
-        int a = 1;
+        int a = 9;
         int b = 2;
-        int expResult = 3;
+        int expResult = 11;
         int result = MyMath.summ(a, b);
         assertEquals(expResult, result);
-      
+        
+        
     }
-    public void testSummFloat() {
-        System.out.println("FloatSumm");
-        int a = 1.1f;
-        int b = 2.2f;
-        int expResult = 3;
-        int result = MyMath.FloatSumm(a, b);
+    @Test
+    public void testSummMinus(){
+        System.out.println("summ with minused");
+        int a = -9;
+        int b = 2;
+        int expResult = -7;
+        int result = MyMath.summ(a, b);
         assertEquals(expResult, result);
-      
+    }
+    @Test
+    public void testSummFloat(){
+        System.out.println("summ with minused");
+        float a = 1.2f;
+        float b = 2.1f;
+        float expResult = 3.3f;
+        float result = MyMath.summ(a, b);
+        assertEquals(expResult, result, 0.001);
+        
+    }
+    
+    
 }
+
