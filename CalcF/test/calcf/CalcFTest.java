@@ -30,7 +30,6 @@ public class CalcFTest {
         double expResult = 0.836;
         double result = instance.y(x, b, a);
         assertEquals(expResult, result, 0.001);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     public void testY2() {
@@ -42,7 +41,6 @@ public class CalcFTest {
         double expResult = 0.395;
         double result = instance.y(x, b, a);
         assertEquals(expResult, result, 0.001);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     public void testY3() {
@@ -54,7 +52,6 @@ public class CalcFTest {
         double expResult = 0.395;
         double result = instance.y(x, b, a);
         assertEquals(expResult, result, 0.001);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
@@ -82,6 +79,28 @@ public class CalcFTest {
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i), result.get(i), 0.001);
         }
-        // TODO review the generated test code and remove the default call to fail.
+     }
+
+    /**
+     * Test of f method, of class CalcF.
+     */
+    @Test
+    public void testF() {
+        System.out.println("f");
+        double xn = 0.08;
+        double xk = 1.8;
+        double dx = 0.2;
+        double a = 2.0;
+        double b = 1.1;
+        CalcF instance = new CalcF();
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.380);
+        expResult.add(0.372);
+        expResult.add(0.366);
+        expResult.add(0.361);
+        expResult.add(0.340);
+        ArrayList result = instance.f(xn, xk, dx, a, b);
+        for (int i = 0; i < result.size(); i++) {
+            assertEquals(expResult.get(i), result.get(i), 0.001);
+        }
     }
-}

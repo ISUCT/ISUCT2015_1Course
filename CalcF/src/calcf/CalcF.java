@@ -15,11 +15,19 @@ public class CalcF {
             return y;
     }
     
-    public ArrayList<Double> z(ArrayList<Double> x, double a, double b) {
-        ArrayList<Double> n = new ArrayList<Double>();
-        for(double i: x) {
-        n.add(y(i, a, b));
+    public ArrayList<Double> f(double xn, double xk, double dx, double a, double b) {
+        ArrayList<Double> y = new ArrayList<Double>();
+        for (double x=xn; x<xk; x+=dx) {
+            y.add(y(x, a, b));
         }
-        return n;
+        return y;
+    }
+        
+    public ArrayList<Double> z(ArrayList<Double> x, double a, double b) {
+        ArrayList<Double> y = new ArrayList<Double>();
+        for(double i: x) {
+        y.add(y(i, a, b));
+        }
+        return y;
     }
 }
