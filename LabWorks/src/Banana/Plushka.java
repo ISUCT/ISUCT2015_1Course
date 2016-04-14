@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Banana;
 
-/**
- *
- * @author UI
- */
+package Banana;
+import java.util.ArrayList;
+
+
 public class Plushka {
 
     public static void main(String[] args) {
@@ -18,7 +12,13 @@ public class Plushka {
         double y = (Math.pow(a, x) - Math.pow(b, x)) / (Math.log10(a/b)) * (Math.pow((a*b), (1/3)));
 return y;
     }
+
+
+public ArrayList<Double> Duck(ArrayList<Double> x, double a, double b) {
+ArrayList<Double> y = new ArrayList<Double>(); 
+for (double i : x) {
+    y.add(y(i, a, b));
 }
-public double z(Arraylist<double>){
-Arraylist<double> n = new Arraylist<double>; 
+return y;
+}
 }
