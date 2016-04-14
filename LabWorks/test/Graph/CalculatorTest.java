@@ -81,10 +81,17 @@ public class CalculatorTest {
         double xk = 3.25;
         double dx = 0.4;
         Calculator instance = new Calculator();
-        ArrayList expResult = null;
-        ArrayList result = instance.TaskA(xn, xk, dx);
-        assertEquals(expResult, result);
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.562);
+        expResult.add(1.444);
+        expResult.add(1.996);
+        expResult.add(2.287);
+        expResult.add(2.508);
+        ArrayList<Double> result = instance.TaskA(xn, xk, dx);
+        for (int i = 0; i < 5; i++) {
+            assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+    }
     }
 }
