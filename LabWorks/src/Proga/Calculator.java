@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Proga;
-
+import java.util.ArrayList;
 /**
  *
  * @author UI
@@ -15,8 +15,25 @@ public class Calculator {
       y = Math.asin(Math.pow( x, a)) + Math.acos(Math.pow(x, b));
       return y;
   }
+  public ArrayList<Double> TakB (ArrayList<Double> x,double a, double b){
+      ArrayList<Double> y = new ArrayList<Double> ();
+      for (double i : x){
+        y.add(yCalc(i, a, b));
+      }
+      return y;
+      }
+  public ArrayList<Double> TaskA(double xn, double xk, double dx, double a, double b){
+      ArrayList<Double> y = new ArrayList<Double> ();
+      return y;
+  }
+}
+      
+      
+      
+  
 //   float a = 2.0f;
 //   float b = 3.0f;
 //   float x = 0.11f;
     
-}
+
+
