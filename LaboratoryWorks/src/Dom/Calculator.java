@@ -5,6 +5,8 @@
  */
 package Dom;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author UI
@@ -16,4 +18,16 @@ public class Calculator {
         return y;
 
     }
+    public ArrayList<Double> TakB (ArrayList<Double> x,double a){
+        ArrayList<Double> y = new ArrayList<Double> ();
+        for (double i : x){
+            y.add(yCalc(i, a));
+        }
+        return y; 
+    }
+  public ArrayList<Double> TakA(double xn, double xk, double dx, double a){
+   ArrayList<Double> y = new ArrayList<Double> ();
+    
+   return y;
+  }
 }
