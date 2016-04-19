@@ -80,4 +80,29 @@ public class CalculatorTest {
             //fail("The test case is a prototype.");
         }
     }
+
+    /**
+     * Test of TakA method, of class Calculator.
+     */
+    @Test
+    public void testTakA() {
+        System.out.println("TakA");
+        double xn = 1.2;
+        double xk = 3.7;
+        double dx = 0.5;
+        double a = 1.6;
+        Calculator instance = new Calculator();
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(2.135);
+        expResult.add(3.095);
+        expResult.add(4.228);
+        expResult.add(5.515);
+        expResult.add(6.944);
+        ArrayList<Double> result = instance.TakA(xn, xk, dx, a);
+        for (int i = 0; i < result.size(); i++){
+        assertEquals(expResult.get(i), result.get(i), 0.001);
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+        }
+    }
 }

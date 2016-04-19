@@ -14,20 +14,24 @@ import java.util.ArrayList;
 public class Calculator {
 
     public double yCalc(double a, double x) {
-        double y = Math.pow(a, Math.pow(x, 2) - 1)-Math.log10(Math.pow(x, 2)-1)+ Math.pow((Math.pow(x, 2)-1),1/3);
+        double y = Math.pow(a, Math.pow(x, 2) - 1) - Math.log10(Math.pow(x, 2) - 1) + Math.pow((Math.pow(x, 2) - 1), 1 / 3);
         return y;
 
     }
-    public ArrayList<Double> TakB (ArrayList<Double> x,double a){
-        ArrayList<Double> y = new ArrayList<Double> ();
-        for (double i : x){
+
+    public ArrayList<Double> TakB(ArrayList<Double> x, double a) {
+        ArrayList<Double> y = new ArrayList<Double>();
+        for (double i : x) {
             y.add(yCalc(i, a));
         }
-        return y; 
+        return y;
     }
-  public ArrayList<Double> TakA(double xn, double xk, double dx, double a){
-   ArrayList<Double> y = new ArrayList<Double> ();
-    
-   return y;
-  }
+
+    public ArrayList<Double> TakA(double xn, double xk, double dx, double a) {
+        ArrayList<Double> y = new ArrayList<Double>();
+        for (double x = xn; x < xk; x+= dx) {
+            y.add(yCalc(x, a));
+        }
+        return y;
+    }
 }
