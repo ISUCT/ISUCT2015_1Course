@@ -94,14 +94,14 @@ public class CalcFTest {
         double b = 1.1;
         CalcF instance = new CalcF();
         ArrayList<Double> expResult = new ArrayList<Double>();
-        expResult.add(0.380);
-        expResult.add(0.372);
-        expResult.add(0.366);
-        expResult.add(0.361);
-        expResult.add(0.340);
+        expResult.add(0.38);
+        expResult.add(0.37);
+        expResult.add(0.35);
+        expResult.add(0.33);
+        expResult.add(0.30);
         ArrayList<Double> result = instance.f(xn, xk, dx, a, b);
-        for (int i = 0; i < result.size(); i++) {
-            assertEquals(expResult.get(i), result.get(i), 0.001);
+        for (int i = 0; i < expResult.size(); i++) {
+            assertEquals(expResult.get(i), result.get(i), 0.01);
         }
     }
 }
