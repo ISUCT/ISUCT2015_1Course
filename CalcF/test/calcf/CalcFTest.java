@@ -99,8 +99,9 @@ public class CalcFTest {
         expResult.add(0.366);
         expResult.add(0.361);
         expResult.add(0.340);
-        ArrayList result = instance.f(xn, xk, dx, a, b);
+        ArrayList<Double> result = instance.f(xn, xk, dx, a, b);
         for (int i = 0; i < result.size(); i++) {
             assertEquals(expResult.get(i), result.get(i), 0.001);
         }
     }
+}
