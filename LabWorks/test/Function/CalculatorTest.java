@@ -4,6 +4,7 @@
  */
 package Function;
 
+import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -47,4 +48,42 @@ public class CalculatorTest {
         assertEquals(expResult, result, 0.001);
         // TODO review the generated test code and remove the default call to fail.
     }
+
+    /**
+     * Test of main method, of class Calculator.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        Calculator.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+
+    }
+
+    /**
+     * Test of b method, of class Calculator.
+     */
+    @Test
+    public void testB() {
+        System.out.println("b");
+        double xn = 1.23;
+        double xk = 7.23;
+        double dx = 1.2;
+        double a = 0.8;
+        double b = 0.4;
+        Calculator instance = new Calculator();
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(12.506);
+        expResult.add(3.325);
+        expResult.add(4.655);
+        expResult.add(5.325);
+        expResult.add(6.569);
+        ArrayList<Double> result = instance.b(xn, xk, dx, a, b);
+        for (int i = 0; i < expResult.size(); i++) {
+            assertEquals(expResult.get(i), result.get(i), 0.001);
+            // TODO review the generated test code and remove the default call to fail.
+        }
+    }
 }
+

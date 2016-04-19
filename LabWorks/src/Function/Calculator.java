@@ -29,4 +29,11 @@ public class Calculator {
         }
         return n;
     }
+    public ArrayList<Double> b (double xn, double xk, double dx, double a, double b) {
+        ArrayList<Double> n = new ArrayList<Double>();
+        for (double x = xn; x < xk; x+= dx) {
+             n.add(yCalc(x, a, b));
+    }
+    return n;
+   }
 }
