@@ -20,7 +20,7 @@ public class Calculator {
    }
    public ArrayList<Double> TaskA(double xn, double xk, double dx){
        ArrayList<Double> y = new ArrayList<Double>();
-       for (double x=xn; x<xk; x+=dx) {
+       for (double x=xn; x <= xk; x= x + dx) {
             y.add(yCalc(x));
        }
        return y;
