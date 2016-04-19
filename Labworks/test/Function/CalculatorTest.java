@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Function;
@@ -10,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author stud_5
+ * @author Ирина
  */
 public class CalculatorTest {
     
@@ -34,13 +35,13 @@ public class CalculatorTest {
     @Test
     public void testYCalc() {
         System.out.println("yCalc");
-        double x = 0.0;
-        double a = 0.0;
-        double b = 0.0;
+        double x = 0.2;
+        double a = 0.05;
+        double b = 0.06;
         Calculator instance = new Calculator();
-        double expResult = 0.0;
+        double expResult = 40.907;
         double result = instance.yCalc(x, a, b);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 0.001);
         // TODO review the generated test code and remove the default call to fail.
     }
 
@@ -50,31 +51,50 @@ public class CalculatorTest {
     @Test
     public void testZ() {
         System.out.println("z");
-        ArrayList<Double> x = null;
-        double a = 0.0;
-        double b = 0.0;
+        ArrayList<Double> n = new ArrayList<Double>();
+        n.add(0.15);
+        n.add(0.26);
+        n.add(0.37);
+        n.add(0.48);
+        n.add(0.56);
+        double a = 0.05;
+        double b = 0.06;
         Calculator instance = new Calculator();
-        ArrayList expResult = null;
-        ArrayList result = instance.z(x, a, b);
-        assertEquals(expResult, result);
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(77.59);
+        expResult.add(23.129);
+        expResult.add(10.66);
+        expResult.add(5.836);
+        expResult.add(3.969);
+        ArrayList<Double> result = instance.z(n, a, b);
+        for (int i = 0; i < result.size(); i++) {
+        assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.
     }
-
+    }
     /**
      * Test of d method, of class Calculator.
      */
     @Test
     public void testD() {
         System.out.println("d");
-        double xn = 0.0;
-        double xk = 0.0;
-        double dx = 0.0;
-        double a = 0.0;
-        double b = 0.0;
+        double xn = 0.2;
+        double xk = 0.95;
+        double dx = 0.15;
+        double a = 0.05;
+        double b = 0.06;
         Calculator instance = new Calculator();
-        ArrayList expResult = null;
-        ArrayList result = instance.d(xn, xk, dx, a, b);
-        assertEquals(expResult, result);
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(40.907);
+        expResult.add(12.067);
+        expResult.add(5.285);
+        expResult.add(2.626);
+        expResult.add(1.274);
+        ArrayList<Double> result = instance.d(xn, xk, dx, a, b);
+        for (int i = 0; i < result.size(); i++){
+        assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.
     }
+    
+}
 }
