@@ -24,6 +24,9 @@ public class Calculator {
       }
   public ArrayList<Double> TaskA(double xn, double xk, double dx, double a, double b){
       ArrayList<Double> y = new ArrayList<Double> ();
+      for (double x=xn; x<xk; x+=dx) {
+            y.add(yCalc(x, a, b));
+      }
       return y;
   }
 }

@@ -90,16 +90,24 @@ public class CalculatorTest {
     @Test
     public void testTaskA() {
         System.out.println("TaskA");
-        double xn = 0.0;
-        double xk = 0.0;
-        double dx = 0.0;
-        double a = 0.0;
-        double b = 0.0;
+        double xn = 0.11;
+        double xk = 0.36;
+        double dx = 0.05;
+        double a = 2.0;
+        double b = 3.0;
         Calculator instance = new Calculator();
-        ArrayList expResult = null;
-        ArrayList result = instance.TaskA(xn, xk, dx, a, b);
-        assertEquals(expResult, result);
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.581);
+        expResult.add(1.592);
+        expResult.add(1.605);
+        expResult.add(1.620);
+        expResult.add(1.637);
+        ArrayList<Double> result = instance.TaskA(xn, xk, dx, a, b);
+        for (int i = 0; i < result.size(); i++) {
+        assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
     }
 }
+
