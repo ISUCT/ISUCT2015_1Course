@@ -60,4 +60,29 @@ public class CalculatorTest {
         // TODO review the generated test code and remove the default call to fail.
         // fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of TaskA method, of class Calculator.
+     */
+    @Test
+    public void testTaskA() {
+        System.out.println("TaskA");
+        double xn = 8.78;
+        double xk = 4.24;
+        double dx = 0.62;
+        double a = 1.35;
+        double b = 0.98;
+        Calculator instance = new Calculator();
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(0.38);
+        expResult.add(0.37);
+        expResult.add(0.35);
+        expResult.add(0.33);
+        expResult.add(0.30);
+        ArrayList<Double>result = instance.TaskA(xn, xk, dx, a, b);
+        for (int i = 0; i < 0; i++) {
+            assertEquals(expResult.get(i), result.get(i), 0.01);
+        
+                    } 
+    }
     }

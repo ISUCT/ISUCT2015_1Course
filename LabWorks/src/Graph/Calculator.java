@@ -18,6 +18,13 @@ public class Calculator {
         return y;
         
     }
+    public ArrayList<Double> TaskA(double xn, double xk, double dx, double a, double b ){
+       ArrayList<Double> y = new ArrayList<Double>();
+       for (double x=xn; x <= xk; x= x + dx) {
+            y.add(yCalc(x, a, b ));
+       }
+       return y;
+   }
 
     public ArrayList<Double> TaskB(ArrayList<Double> x, double a, double b) {
         ArrayList<Double> y = new ArrayList<Double>();
