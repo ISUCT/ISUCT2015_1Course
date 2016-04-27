@@ -75,10 +75,10 @@ public class CalculatorTest {
         Calculator instance = new Calculator();
         ArrayList<Double> expResult = new ArrayList<Double>();
         expResult.add(12.506);
-        expResult.add(3.325);
-        expResult.add(4.655);
-        expResult.add(5.325);
-        expResult.add(6.569);
+        expResult.add(182.523);
+        expResult.add(1063.98);
+        expResult.add(3913.987);
+        expResult.add(10992.446);
         ArrayList<Double> result = instance.b(xn, xk, dx, a, b);
         for (int i = 0; i < expResult.size(); i++) {
             assertEquals(expResult.get(i), result.get(i), 0.001);
