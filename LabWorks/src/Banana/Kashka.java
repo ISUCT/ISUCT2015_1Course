@@ -6,7 +6,10 @@
 package Banana;
 
 import java.util.ArrayList;
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author UI
@@ -45,6 +48,7 @@ public class Kashka extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtres = new javax.swing.JTextArea();
+        txtsve = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +87,13 @@ public class Kashka extends javax.swing.JFrame {
         txtres.setRows(5);
         jScrollPane1.setViewportView(txtres);
 
+        txtsve.setText("SAVE");
+        txtsve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -107,7 +118,9 @@ public class Kashka extends javax.swing.JFrame {
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                                .addComponent(jButton1)
+                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtsve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(72, 72, 72))
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -147,7 +160,10 @@ public class Kashka extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtsve))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
@@ -185,6 +201,17 @@ public class Kashka extends javax.swing.JFrame {
            txtres.append(i.toString() + "\r\n");
        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtsveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsveActionPerformed
+        String Save = txtres.getText(); 
+        try {
+            FileWriter writer = new FileWriter("result.txt");
+            writer.write(Save);
+            writer.close();
+        } catch (IOException ex) {
+           ex.printStackTrace();
+        }
+    }//GEN-LAST:event_txtsveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +263,7 @@ public class Kashka extends javax.swing.JFrame {
     private javax.swing.JTextField txtb;
     private javax.swing.JTextField txtdx;
     private javax.swing.JTextArea txtres;
+    private javax.swing.JButton txtsve;
     private javax.swing.JTextField txtxk;
     private javax.swing.JTextField txtxn;
     // End of variables declaration//GEN-END:variables
