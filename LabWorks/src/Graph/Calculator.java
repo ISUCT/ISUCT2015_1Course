@@ -15,4 +15,5 @@ public class Calculator {
         double y = Math.pow(Math.pow(a, x) + b, 1 / 3)/(Math.log10(Math.pow(x, 2))); 
         return y;
     }
+    
 }
