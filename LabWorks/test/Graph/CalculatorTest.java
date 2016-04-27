@@ -88,7 +88,7 @@ public class CalculatorTest {
         expResult.add(2.287);
         expResult.add(2.508);
         ArrayList<Double> result = instance.TaskA(xn, xk, dx);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < expResult.size(); i++) {
             assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
