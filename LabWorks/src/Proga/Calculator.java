@@ -34,9 +34,5 @@ public class Calculator {
       
       
   
-//   float a = 2.0f;
-//   float b = 3.0f;
-//   float x = 0.11f;
-    
 
 
