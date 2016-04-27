@@ -1,6 +1,10 @@
 package calcf;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class calcFjFrame extends javax.swing.JFrame {
 
@@ -20,6 +24,7 @@ public class calcFjFrame extends javax.swing.JFrame {
         b = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Result = new javax.swing.JTextArea();
+        saveResult = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +55,13 @@ public class calcFjFrame extends javax.swing.JFrame {
         Result.setRows(5);
         jScrollPane1.setViewportView(Result);
 
+        saveResult.setText("Save result");
+        saveResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveResultActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,6 +84,10 @@ public class calcFjFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(saveResult)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,13 +106,16 @@ public class calcFjFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(281, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(saveResult)
+                .addContainerGap(248, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
+           
         CalcF f = new CalcF();
 
         ArrayList<Double> m = f.f(Double.parseDouble(xn.getText()), Double.parseDouble(xk.getText()), Double.parseDouble(dx.getText()), Double.parseDouble(a.getText()), Double.parseDouble(b.getText()));
@@ -106,6 +125,18 @@ public class calcFjFrame extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_okActionPerformed
+
+    private void saveResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveResultActionPerformed
+        String save = Result.getText();
+       
+        try {
+            FileWriter writer = new FileWriter("Rerult.txt");
+            writer.write(save);
+            writer.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }         
+    }//GEN-LAST:event_saveResultActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -122,6 +153,7 @@ public class calcFjFrame extends javax.swing.JFrame {
     private javax.swing.JTextField dx;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton ok;
+    private javax.swing.JButton saveResult;
     private javax.swing.JTextField xk;
     private javax.swing.JTextField xn;
     // End of variables declaration//GEN-END:variables
