@@ -20,7 +20,7 @@ public class Calculator {
         return chisl/zn;
     }
     
-    public ArrayList<Double> z(ArrayList<Double> x, double a, double b) {
+    public ArrayList<Double> TaskB(ArrayList<Double> x, double a, double b) {
         ArrayList<Double> n = new ArrayList<Double>();
         for (double i : x) {
             n.add(yCalc(i,a,b));
@@ -28,7 +28,7 @@ public class Calculator {
         return n;
     }
    
-    public ArrayList<Double> d(double xn, double xk, double dx, double a, double b){
+    public ArrayList<Double> TaskA(double xn, double xk, double dx, double a, double b){
         ArrayList<Double> n = new ArrayList<Double>();
         for (double x=xn; x<xk; x+=dx) {
             n.add(yCalc(x,a,b));
