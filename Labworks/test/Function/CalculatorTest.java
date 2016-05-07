@@ -66,7 +66,7 @@ public class CalculatorTest {
         expResult.add(10.66);
         expResult.add(5.836);
         expResult.add(3.969);
-        ArrayList<Double> result = instance.z(n, a, b);
+        ArrayList<Double> result = instance.TaskB(n, a, b);
         for (int i = 0; i < result.size(); i++) {
         assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.
@@ -90,7 +90,7 @@ public class CalculatorTest {
         expResult.add(5.285);
         expResult.add(2.626);
         expResult.add(1.274);
-        ArrayList<Double> result = instance.d(xn, xk, dx, a, b);
+        ArrayList<Double> result = instance.TaskA(xn, xk, dx, a, b);
         for (int i = 0; i < result.size(); i++){
         assertEquals(expResult.get(i), result.get(i), 0.001);
         // TODO review the generated test code and remove the default call to fail.

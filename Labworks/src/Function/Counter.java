@@ -146,8 +146,8 @@ public class Counter extends javax.swing.JFrame {
         double dx = Double.parseDouble(txtdx.getText());
         Calculator instance = new Calculator();
         ArrayList<Double> result = instance.TaskA(xn, xk, dx, a, b);
-        for (double i :result) {  
-             txtresult.append(Double.toString(i)+"\r\n");
+            for (double i :result) {
+            txtresult.append(Double.toString(i)+"\r\n");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
