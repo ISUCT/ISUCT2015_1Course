@@ -5,6 +5,7 @@
  */
 package Function;
 
+import java.util.ArrayList;
 /**
  *
  * @author Ирина
@@ -146,7 +147,7 @@ public class Counter extends javax.swing.JFrame {
         Calculator instance = new Calculator();
         ArrayList<Double> result = instance.TaskA(xn, xk, dx, a, b);
         for (double i :result) {  
-             txtresult.append(result.get(i).toString(i)+"\r\n");
+             txtresult.append(Double.toString(i)+"\r\n");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
