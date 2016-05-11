@@ -37,13 +37,24 @@ public class TasksClassTest {
     @Test
     public void testTaskB() {
         System.out.println("TaskB");
-        ArrayList<Double> x = null;
+        ArrayList<Double> x = new ArrayList<Double>();
+        x.add(0.1);
+        x.add(0.9);
+        x.add(1.2);
+        x.add(1.5);
+        x.add(2.3);
         TasksClass instance = new TasksClass();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
+        expResult.add(1.470);
+        expResult.add(0.451);
+        expResult.add(0.0);
+        expResult.add(-0.312);
+        expResult.add(-1.196);
         ArrayList<Double> result = instance.TaskB(x);
-        assertEquals(expResult, result);
+         for (int i = 0; i < result.size(); i++) {
+        assertEquals(expResult.get(i), result.get(i), 0.001);
     }
-
+    }
     /**
      * Test of TaskA method, of class TasksClass.
      */
@@ -54,9 +65,11 @@ public class TasksClassTest {
         double xk = 2.2;
         double dx = 0.4;
         TasksClass instance = new TasksClass();
-        ArrayList<Double> expResult = null;
+        ArrayList<Double> expResult = new ArrayList<Double>();
         ArrayList<Double> result = instance.TaskA(xn, xk, dx);
-        assertEquals(expResult, result);
-    }
+        for (int i = 0; i < expResult.size(); i++) {
+            assertEquals(expResult.get(i), result.get(i), 0.001);
+        }
     
+    }
 }
