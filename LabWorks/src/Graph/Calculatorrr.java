@@ -40,6 +40,7 @@ public class Calculatorrr extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtresult = new javax.swing.JTextArea();
         save = new javax.swing.JButton();
+        read = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,14 @@ public class Calculatorrr extends javax.swing.JFrame {
             }
         });
 
+        read.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        read.setText("READ");
+        read.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,7 +122,9 @@ public class Calculatorrr extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(save)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(read, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -138,8 +149,10 @@ public class Calculatorrr extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(52, 52, 52))
+                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(read, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -177,6 +190,28 @@ public class Calculatorrr extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_saveActionPerformed
+
+    private void readActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readActionPerformed
+        // TODO add your handling code here:
+       
+        try { 
+            File myFile = new File("Result.txt");
+            FileReader fileReader = new FileReader(myFile);
+            BufferedReader reader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+            reader.close();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+            
+        
+            
+        
+    }//GEN-LAST:event_readActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +254,7 @@ public class Calculatorrr extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton read;
     private javax.swing.JButton save;
     private javax.swing.JTextField txtXk;
     private javax.swing.JTextField txtXn;
