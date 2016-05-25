@@ -6,10 +6,14 @@ package Proga;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -23,7 +27,7 @@ public class JFrame2 extends javax.swing.JFrame {
     public JFrame2() {
         initComponents();
     }
-
+ArrayList<Double> result;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +52,8 @@ public class JFrame2 extends javax.swing.JFrame {
         jffResult = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        save = new javax.swing.JButton();
+        oy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,13 +92,34 @@ public class JFrame2 extends javax.swing.JFrame {
             }
         });
 
+        save.setText("SAVE OBJECT AS");
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
+
+        oy.setText("oy");
+        oy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(save)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addGap(37, 37, 37)
+                        .addComponent(oy))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
@@ -111,16 +138,12 @@ public class JFrame2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                         .addGap(22, 22, 22))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +175,10 @@ public class JFrame2 extends javax.swing.JFrame {
                         .addGap(10, 10, 10))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
                 .addGap(39, 39, 39)
-                .addComponent(jButton3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(save)
+                    .addComponent(oy))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -170,7 +196,7 @@ public class JFrame2 extends javax.swing.JFrame {
         double xk = Double.parseDouble(jffxk.getText());
         double dx = Double.parseDouble(jffdx.getText());
         Calculator instance = new Calculator();
-        ArrayList<Double> result = instance.TaskA(xn, xk, dx, a, b);
+        result = instance.TaskA(xn, xk, dx, a, b);
         for (double i : result) {
             jffResult.append(Double.toString(i) + "\r\n");
             // TODO add your handling code here:
@@ -204,6 +230,32 @@ public class JFrame2 extends javax.swing.JFrame {
             ex.printStackTrace();
             }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+        // TODO add your handling code here:
+        try{
+        FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
+        ObjectOutputStream os = new ObjectOutputStream(fileStream);
+        
+        os.writeObject(result);
+        os.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_saveActionPerformed
+
+    private void oyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oyActionPerformed
+        // TODO add your handling code here:
+        ArrayList<Double> lr;
+        try {
+            FileInputStream fileStream = new FileInputStream("ResultObject.txt");
+            ObjectInputStream os = new ObjectInputStream(fileStream); 
+            lr = (ArrayList<Double>)os.readObject();
+            jffResult.append(lr + "\r\n"); 
+        } catch (Exception ex) { 
+            ex.printStackTrace() ;
+        }
+    }//GEN-LAST:event_oyActionPerformed
 
 /**
  * @param args the command line arguments
@@ -267,5 +319,7 @@ public static void main(String args[]) {
     private javax.swing.JFormattedTextField jffb;
     private javax.swing.JFormattedTextField jffdx;
     private javax.swing.JFormattedTextField jffxk;
+    private javax.swing.JButton oy;
+    private javax.swing.JButton save;
     // End of variables declaration//GEN-END:variables
 }
