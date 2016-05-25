@@ -5,11 +5,16 @@
  */
 package Banana;
 
-import java.util.ArrayList;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *
  * @author UI
@@ -49,6 +54,9 @@ public class Kashka extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtres = new javax.swing.JTextArea();
         txtsve = new javax.swing.JButton();
+        OpenResult = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        LastRes = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,6 +102,17 @@ public class Kashka extends javax.swing.JFrame {
             }
         });
 
+        OpenResult.setText("OPEN");
+        OpenResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OpenResultActionPerformed(evt);
+            }
+        });
+
+        LastRes.setColumns(20);
+        LastRes.setRows(5);
+        jScrollPane2.setViewportView(LastRes);
+
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -112,25 +131,25 @@ public class Kashka extends javax.swing.JFrame {
                                 .addComponent(txtb)
                                 .addComponent(txtxk)
                                 .addComponent(txtxn))
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2))
                         .addGap(111, 111, 111)
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtsve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(72, 72, 72))
+                                    .addComponent(txtsve, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(OpenResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(64, 64, 64))
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,9 +171,9 @@ public class Kashka extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtxk, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
+                        .addGap(44, 44, 44)
                         .addComponent(jLabel5)
-                        .addGap(2, 2, 2)
+                        .addGap(44, 44, 44)
                         .addComponent(txtdx, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -163,9 +182,13 @@ public class Kashka extends javax.swing.JFrame {
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtsve))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                                .addComponent(txtsve)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(OpenResult))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -192,26 +215,43 @@ public class Kashka extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ArrayList<Double> y;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Plushka g = new Plushka(); 
-       ArrayList<Double> y = g.Pachka(Double.parseDouble(txtxn.getText()), Double.parseDouble(txtxk.getText()), Double.parseDouble(txtdx.getText()), Double.parseDouble(txta.getText()), Double.parseDouble(txtb.getText()));
-       
-       for (Double i:y){
-           txtres.append(i.toString() + "\r\n");
-       }
+        Plushka g = new Plushka();
+        y = g.Pachka(Double.parseDouble(txtxn.getText()), Double.parseDouble(txtxk.getText()), Double.parseDouble(txtdx.getText()), Double.parseDouble(txta.getText()), Double.parseDouble(txtb.getText()));
+
+        for (Double i : y) {
+            txtres.append(i.toString() + "\r\n");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtsveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsveActionPerformed
-        String Save = txtres.getText(); 
+        String Save = txtres.getText();
         try {
-            FileWriter writer = new FileWriter("result.txt");
-            writer.write(Save);
-            writer.close();
+            //FileWriter writer = new FileWriter("result.txt");
+            //writer.write(Save);
+            //writer.close();
+            FileOutputStream fileStream = new FileOutputStream("result.txt");
+            ObjectOutputStream os = new ObjectOutputStream(fileStream);
+            os.writeObject(y);
+            os.close();
         } catch (IOException ex) {
-           ex.printStackTrace();
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_txtsveActionPerformed
+
+    private void OpenResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenResultActionPerformed
+        ArrayList<Double> lr;
+        try {
+            FileInputStream fileStream = new FileInputStream("result.txt");
+            ObjectInputStream os = new ObjectInputStream(fileStream);
+            lr = (ArrayList<Double>) os.readObject();
+            LastRes.append(lr + "\r\n");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OpenResultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,6 +289,8 @@ public class Kashka extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea LastRes;
+    private javax.swing.JButton OpenResult;
     private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
@@ -259,6 +301,7 @@ public class Kashka extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txta;
     private javax.swing.JTextField txtb;
     private javax.swing.JTextField txtdx;
