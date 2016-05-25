@@ -6,6 +6,7 @@
 package Function;
 
 import java.util.ArrayList;
+import java.io.*;
 /**
  *
  * @author Ирина
@@ -42,7 +43,7 @@ public class Counter extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtresult = new javax.swing.JTextArea();
         Save = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Load = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,9 +74,19 @@ public class Counter extends javax.swing.JFrame {
         txtresult.setRows(5);
         jScrollPane1.setViewportView(txtresult);
 
-        Save.setText("jButton2");
+        Save.setText("SAVE");
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        Load.setText("LOAD");
+        Load.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,9 +124,11 @@ public class Counter extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(Save)
-                            .addComponent(jButton3)))))
+                            .addComponent(Load)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Save, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +154,7 @@ public class Counter extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Save)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3))
+                        .addComponent(Load))
                     .addComponent(jScrollPane1))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -165,6 +178,39 @@ public class Counter extends javax.swing.JFrame {
     private void txtdxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdxActionPerformed
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+     // TODO add your handling code here:
+    String save = txtresult.getText();
+        try {
+            FileWriter writer = new FileWriter("Result.txt");
+            
+            writer.write(save);
+            writer.close();
+        
+        }
+        catch (IOException ex){
+            ex.printStackTrace();
+            
+        }
+    }//GEN-LAST:event_SaveActionPerformed
+
+    private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
+        // TODO add your handling code here:  
+        try { 
+            File myFile = new File("Result.txt");
+            FileReader fileReader = new FileReader(myFile);
+            BufferedReader reader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+            reader.close();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_LoadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,9 +248,9 @@ public class Counter extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Load;
     private javax.swing.JButton Save;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
