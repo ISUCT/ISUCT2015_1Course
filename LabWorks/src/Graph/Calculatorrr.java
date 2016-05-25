@@ -41,6 +41,8 @@ public class Calculatorrr extends javax.swing.JFrame {
         txtresult = new javax.swing.JTextArea();
         save = new javax.swing.JButton();
         read = new javax.swing.JButton();
+        saveobjectAS = new javax.swing.JButton();
+        olr = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +92,22 @@ public class Calculatorrr extends javax.swing.JFrame {
             }
         });
 
+        saveobjectAS.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        saveobjectAS.setText("SAVE OBJECT AS");
+        saveobjectAS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveobjectASActionPerformed(evt);
+            }
+        });
+
+        olr.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        olr.setText("OLR");
+        olr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                olrActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,7 +115,9 @@ public class Calculatorrr extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(olr, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(66, 66, 66)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -113,18 +133,21 @@ public class Calculatorrr extends javax.swing.JFrame {
                                 .addComponent(txtXn, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(35, 35, 35)
                                 .addComponent(txtXk, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtdx, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))))
                 .addGap(29, 29, 29))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(read, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(saveobjectAS, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(read, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -139,10 +162,13 @@ public class Calculatorrr extends javax.swing.JFrame {
                     .addComponent(txtXn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtXk, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtdx, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGap(34, 34, 34)
+                .addComponent(saveobjectAS)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addComponent(olr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -161,13 +187,13 @@ public class Calculatorrr extends javax.swing.JFrame {
     private void txtXnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtXnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtXnActionPerformed
-
+ArrayList<Double> result;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      double xn = Double.parseDouble(txtXn.getText());
      double xk = Double.parseDouble(txtXk.getText());
      double dx = Double.parseDouble(txtdx.getText());
      Calculator instance = new Calculator();
-     ArrayList<Double> result = instance.TaskA(xn, xk, dx);
+      result = instance.TaskA(xn, xk, dx);
         for (int i = 0; i < 5; i++) {
             txtresult.append(result.get(i).toString()+"\r\n");
      //txtResult.setText(Double.toString(result));
@@ -213,6 +239,36 @@ public class Calculatorrr extends javax.swing.JFrame {
         
     }//GEN-LAST:event_readActionPerformed
 
+    private void saveobjectASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveobjectASActionPerformed
+       try {
+        FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
+        ObjectOutputStream os = new ObjectOutputStream(fileStream);
+           Object characterOne = null;
+        
+        os.writeObject(result);
+        os.close();
+       }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_saveobjectASActionPerformed
+
+    private void olrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_olrActionPerformed
+ ArrayList<Double> lr;
+        try {
+            FileInputStream fileStream = new FileInputStream("ResultObject.txt");
+            ObjectInputStream os = new ObjectInputStream(fileStream); 
+            lr = (ArrayList<Double>)os.readObject();
+            txtresult.append(lr + "\r\n"); 
+        }
+            
+         catch (Exception ex) { 
+            ex.printStackTrace() ;
+                }
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_olrActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -244,7 +300,7 @@ public class Calculatorrr extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Calculatorrr().setVisible(true);
-            }
+}
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -254,8 +310,10 @@ public class Calculatorrr extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton olr;
     private javax.swing.JButton read;
     private javax.swing.JButton save;
+    private javax.swing.JButton saveobjectAS;
     private javax.swing.JTextField txtXk;
     private javax.swing.JTextField txtXn;
     private javax.swing.JTextField txtdx;
