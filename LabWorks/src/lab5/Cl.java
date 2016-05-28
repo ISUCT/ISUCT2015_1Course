@@ -13,7 +13,7 @@ import java.net.Socket;
  *
  * @author stud_5
  */
-public class ClientServer {
+public class Cl {
     
      public void go() {
         try {
@@ -29,7 +29,7 @@ public class ClientServer {
     }
     
      public static void main(String[] args) {
-        ClientServer c = new ClientServer();
+        Cl c = new Cl();
         c.go();
     }
 }

@@ -11,7 +11,7 @@ import java.net.*;
  *
  * @author stud_5
  */
-public class Server {
+public class Serv {
     public void go() {
         try {
             ServerSocket serverSock = new ServerSocket(1818);
@@ -27,7 +27,7 @@ public class Server {
     }
     
      public static void main(String[] args) {
-        Server s = new Server(); 
+        Serv s = new Serv(); 
         s.go();
     }
 }
