@@ -47,7 +47,7 @@ ArrayList<Double> result;
         txtA = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        okey = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         save = new javax.swing.JButton();
@@ -85,10 +85,10 @@ ArrayList<Double> result;
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setText("ok");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        okey.setText("ok");
+        okey.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                okeyActionPerformed(evt);
             }
         });
 
@@ -131,7 +131,7 @@ ArrayList<Double> result;
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(okey)
                         .addGap(30, 30, 30))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3)
@@ -194,7 +194,7 @@ ArrayList<Double> result;
                 .addComponent(j, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(okey, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addContainerGap())
         );
@@ -214,7 +214,8 @@ ArrayList<Double> result;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void okeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okeyActionPerformed
+
         double xn = Double.parseDouble(txtXn.getText());
         double xk = Double.parseDouble(txtXk.getText());
         double dx = Double.parseDouble(txtDx.getText());
@@ -223,7 +224,7 @@ ArrayList<Double> result;
         result = instance.TakA(xn, xk, dx, a);
         for (int i = 0; i < result.size(); i++) {
             jTextArea1.append(result.get(i).toString() + "\r\n");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_okeyActionPerformed
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -320,7 +321,6 @@ ArrayList<Double> result;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton j;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -329,6 +329,7 @@ ArrayList<Double> result;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton okey;
     private javax.swing.JButton save;
     private javax.swing.JTextField txtA;
     private javax.swing.JTextField txtDx;
