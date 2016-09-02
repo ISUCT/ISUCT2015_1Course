@@ -6,6 +6,7 @@ package Graph;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.net.*;
 
 /**
  *
@@ -189,6 +190,7 @@ public class Calculatorrr extends javax.swing.JFrame {
     }//GEN-LAST:event_txtXnActionPerformed
 ArrayList<Double> result;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
      double xn = Double.parseDouble(txtXn.getText());
      double xk = Double.parseDouble(txtXk.getText());
      double dx = Double.parseDouble(txtdx.getText());
