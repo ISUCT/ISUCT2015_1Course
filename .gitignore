@@ -74,3 +74,5 @@ hs_err_pid*
 /CalcF/dist/
 /Client-Server/nbproject/private/
 /Client-Server/build/
+/DailyAdviceClient/nbproject/private/
+/DailyAdviceClient/build/
