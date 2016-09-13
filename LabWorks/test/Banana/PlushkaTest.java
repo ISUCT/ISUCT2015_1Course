@@ -1,6 +1,7 @@
 
 package Banana;
 
+import lab5.Plushka;
 import java.util.ArrayList;
 
 import org.junit.Test;
