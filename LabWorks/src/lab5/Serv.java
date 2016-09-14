@@ -14,7 +14,7 @@ import java.net.*;
 public class Serv {
     public void go() {
         try {
-            ServerSocket serverSock = new ServerSocket(1818);
+            ServerSocket serverSock = new ServerSocket(6666);
             while(true) {
                 Socket s = serverSock.accept();
                 PrintWriter writer = new PrintWriter(s.getOutputStream()); 
