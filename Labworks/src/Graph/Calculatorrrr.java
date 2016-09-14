@@ -7,6 +7,7 @@ package Graph;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.net.Socket;
 
 /**
  *
@@ -204,6 +205,20 @@ public class Calculatorrrr extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
  ArrayList<Double> result;
+  public void jButton1() {
+        try {
+            Socket s = new Socket("127.0.0.1", 1512); 
+            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
+            BufferedReader reader = new BufferedReader(stream);
+            String message = reader.readLine(); 
+            System.out.println(message); 
+            reader.close();
+        } catch(IOException ex) {
+            ex.printStackTrace(); 
+        }
+    }
+ 
+ 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         double a = Double.parseDouble(jffa.getText());
         double b = Double.parseDouble(jffb.getText());
@@ -215,6 +230,8 @@ public class Calculatorrrr extends javax.swing.JFrame {
         for (double i : result) {
             jTextArea1.append(Double.toString(i) + "\r\n");
         }
+        jButton1 ();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
@@ -277,9 +294,12 @@ public class Calculatorrrr extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
  public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(() -> {
-            new calcFjFrame().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+     public void run(){
+                new calcFjFrame().setVisible(true);
+     }
         });
 }
 
