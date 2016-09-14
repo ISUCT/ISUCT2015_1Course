@@ -125,7 +125,7 @@ public class Calculatorrrr extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(save)
                                     .addComponent(read))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jffXn, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,19 +199,23 @@ public class Calculatorrrr extends javax.swing.JFrame {
                         .addComponent(save)
                         .addGap(18, 18, 18)
                         .addComponent(read)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
  ArrayList<Double> result;
+ 
+ 
   public void jButton1() {
         try {
             Socket s = new Socket("127.0.0.1", 1512); 
             InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
             BufferedReader reader = new BufferedReader(stream);
-            String message = reader.readLine(); 
-            System.out.println(message); 
+            //String message = reader.readLine(); 
+            String messege = null;
+            messege = reader.readLine();
+            jTextArea1.append(messege);
             reader.close();
         } catch(IOException ex) {
             ex.printStackTrace(); 
@@ -296,12 +300,28 @@ public class Calculatorrrr extends javax.swing.JFrame {
      */
     
  public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-     public void run(){
-                new calcFjFrame().setVisible(true);
-     }
-        });
+    try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Calculatorrrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Calculatorrrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Calculatorrrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Calculatorrrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }   
+java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Calculatorrrr().setVisible(true);
 }
+        });
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
