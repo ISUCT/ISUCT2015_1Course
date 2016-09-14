@@ -189,6 +189,24 @@ public class Calculatorrr extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtXnActionPerformed
 ArrayList<Double> result;
+
+ 
+    public void jButton1() {
+        try {
+            Socket s = new Socket("127.0.0.1", 1467); 
+            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
+            BufferedReader reader = new BufferedReader(stream);
+            String message = reader.readLine(); 
+            System.out.println(message); 
+            reader.close();
+        } catch(IOException ex) {
+            ex.printStackTrace(); 
+        }
+    }
+    
+     
+    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
      double xn = Double.parseDouble(txtXn.getText());
@@ -200,6 +218,7 @@ ArrayList<Double> result;
             txtresult.append(result.get(i).toString()+"\r\n");
      //txtResult.setText(Double.toString(result));
         }
+        jButton1();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
