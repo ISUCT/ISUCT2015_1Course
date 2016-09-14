@@ -5,6 +5,7 @@
  */
 package lab5;
 
+import com.sun.org.apache.xalan.internal.xsltc.trax.OutputSettings;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,6 +14,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -213,19 +216,28 @@ public class Kashka extends javax.swing.JFrame {
     ArrayList<Double> y;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Plushka g = new Plushka();
-      
+      Lol lol = new Lol();
+      lol.setXn(Double.parseDouble(txtxn.getText()));
+      lol.setXk(Double.parseDouble(txtxk.getText()));
+      lol.setDx(Double.parseDouble(txtdx.getText()));
+      lol.setA(Double.parseDouble(txta.getText()));
+      lol.setB(Double.parseDouble(txtb.getText()));
         y = g.Pachka(Double.parseDouble(txtxn.getText()), Double.parseDouble(txtxk.getText()), Double.parseDouble(txtdx.getText()), Double.parseDouble(txta.getText()), Double.parseDouble(txtb.getText()));
 
         for (Double i : y) {
             txtres.append(i.toString() + "\r\n");
         }
-        go();
+        go(lol);
         save();
     }//GEN-LAST:event_jButton1ActionPerformed
-    public void go() {
+    public void go(Lol lol) {
         try {
             Socket s = new Socket("127.0.0.1", 6666);
             InputStreamReader stream = new InputStreamReader(s.getInputStream());
+            ObjectOutputStream os = new ObjectOutputStream(s.getOutputStream());
+            os.writeObject(lol);
+            
+            
             BufferedReader reader = new BufferedReader(stream);
             String message = reader.readLine();
             txtres.append(message);
