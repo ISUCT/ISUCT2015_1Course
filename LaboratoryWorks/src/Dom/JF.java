@@ -12,8 +12,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.Socket;
 
 /**
  *
@@ -55,6 +57,14 @@ ArrayList<Double> result;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtXn.setText("1.2");
+        txtXn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtXnActionPerformed(evt);
+            }
+        });
+
+        txtXk.setText("3.7");
         txtXk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtXkActionPerformed(evt);
@@ -65,6 +75,7 @@ ArrayList<Double> result;
 
         jLabel2.setText("xk");
 
+        txtDx.setText("0.5");
         txtDx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDxActionPerformed(evt);
@@ -75,6 +86,7 @@ ArrayList<Double> result;
 
         jLabel4.setText("a");
 
+        txtA.setText("1.6");
         txtA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAActionPerformed(evt);
@@ -214,8 +226,23 @@ ArrayList<Double> result;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAActionPerformed
 
+        public void okey() {
+        try {
+            Socket s = new Socket("127.0.0.1", 1333); 
+            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
+            BufferedReader reader = new BufferedReader(stream);
+            String message = reader.readLine(); 
+            System.out.println(message); 
+            reader.close();
+        } catch(IOException ex) {
+            ex.printStackTrace(); 
+        }
+    }
+    
     private void okeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okeyActionPerformed
 
+
+    
         double xn = Double.parseDouble(txtXn.getText());
         double xk = Double.parseDouble(txtXk.getText());
         double dx = Double.parseDouble(txtDx.getText());
@@ -225,7 +252,8 @@ ArrayList<Double> result;
         for (int i = 0; i < result.size(); i++) {
             jTextArea1.append(result.get(i).toString() + "\r\n");
     }//GEN-LAST:event_okeyActionPerformed
-    }
+    okey();
+}
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String save = jTextArea1.getText();
@@ -284,6 +312,10 @@ ArrayList<Double> result;
         }
        // TODO add your handling code here:
     }//GEN-LAST:event_jActionPerformed
+
+    private void txtXnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtXnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtXnActionPerformed
 
     /**
      * @param args the command line arguments
