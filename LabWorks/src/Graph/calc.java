@@ -212,8 +212,10 @@ public void jButton1() {
             Socket s = new Socket("127.0.0.1", 1455); 
             InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
             BufferedReader reader = new BufferedReader(stream);
-            String message = reader.readLine(); 
-            System.out.println(message); 
+            //String message = reader.readLine(); 
+           String message = null;
+           message = reader.readLine();
+           jTextArea1.append(message);
             reader.close();
         } catch(IOException ex) {
             ex.printStackTrace(); 
