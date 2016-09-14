@@ -196,8 +196,11 @@ ArrayList<Double> result;
             Socket s = new Socket("127.0.0.1", 1467); 
             InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
             BufferedReader reader = new BufferedReader(stream);
-            String message = reader.readLine(); 
-            System.out.println(message); 
+            //Strig message = reader.readLine(); 
+           String message = null;
+            message = reader.readLine();
+            txtresult.append(message);
+            
             reader.close();
         } catch(IOException ex) {
             ex.printStackTrace(); 
