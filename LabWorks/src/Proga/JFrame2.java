@@ -12,8 +12,10 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.Socket;
 
 /**
  *
@@ -27,7 +29,8 @@ public class JFrame2 extends javax.swing.JFrame {
     public JFrame2() {
         initComponents();
     }
-ArrayList<Double> result;
+    ArrayList<Double> result;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -189,6 +192,20 @@ ArrayList<Double> result;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void jButton() {
+        try {
+            Socket s = new Socket("127.0.0.1", 1818);
+            InputStreamReader stream = new InputStreamReader(s.getInputStream());
+            BufferedReader reader = new BufferedReader(stream);
+            String message = null;
+            message = reader.readLine();
+            jffResult.append(message);
+          reader.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         double a = Double.parseDouble(jffa.getText());
         double b = Double.parseDouble(jffb.getText());
@@ -201,13 +218,13 @@ ArrayList<Double> result;
             jffResult.append(Double.toString(i) + "\r\n");
             // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+        jButton();
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String save = jffResult.getText();
         try {
             FileWriter writer = new FileWriter("Rerult.txt");
-
             writer.write(save);
             writer.close();
         } catch (IOException ex) {
@@ -217,28 +234,28 @@ ArrayList<Double> result;
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try{
-            File myFile = new File ("Rerult.txt");
-            FileReader fileReader = new FileReader (myFile);
-            BufferedReader reader = new BufferedReader (fileReader);
+        try {
+            File myFile = new File("Rerult.txt");
+            FileReader fileReader = new FileReader(myFile);
+            BufferedReader reader = new BufferedReader(fileReader);
             String line = null;
-            while ((line = reader.readLine()) !=null) {
+            while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
             reader.close();
         } catch (Exception ex) {
             ex.printStackTrace();
-            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        try{
-        FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
-        ObjectOutputStream os = new ObjectOutputStream(fileStream);
-        
-        os.writeObject(result);
-        os.close();
+        try {
+            FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
+            ObjectOutputStream os = new ObjectOutputStream(fileStream);
+
+            os.writeObject(result);
+            os.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -249,18 +266,18 @@ ArrayList<Double> result;
         ArrayList<Double> lr;
         try {
             FileInputStream fileStream = new FileInputStream("ResultObject.txt");
-            ObjectInputStream os = new ObjectInputStream(fileStream); 
-            lr = (ArrayList<Double>)os.readObject();
-            jffResult.append(lr + "\r\n"); 
-        } catch (Exception ex) { 
-            ex.printStackTrace() ;
+            ObjectInputStream os = new ObjectInputStream(fileStream);
+            lr = (ArrayList<Double>) os.readObject();
+            jffResult.append(lr + "\r\n");
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_oyActionPerformed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -271,28 +288,28 @@ public static void main(String args[]) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                
 
-}
+
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(JFrame2.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrame2.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
 
-} catch (IllegalAccessException ex) {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(JFrame2.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(JFrame2.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(JFrame2.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
