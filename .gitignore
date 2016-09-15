@@ -76,3 +76,5 @@ hs_err_pid*
 /Client-Server/build/
 /DailyAdviceClient/nbproject/private/
 /DailyAdviceClient/build/
+/Calc_wia_Serv/nbproject/private/
+/Calc_wia_Serv/build/

@@ -1,4 +1,4 @@
-package calcf;
+package dailyadviceclient;
 
 import java.util.ArrayList;
 
