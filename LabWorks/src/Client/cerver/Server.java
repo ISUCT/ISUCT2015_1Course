@@ -5,10 +5,7 @@
 package Client.cerver;
 import java.io.*;
 import java.net.*;
-/**
- *
- * @author stud_6
- */
+
 public class Server {
     public void okey() {
         try { 
