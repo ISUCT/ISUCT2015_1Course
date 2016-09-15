@@ -29,7 +29,8 @@ public class JF extends javax.swing.JFrame {
     public JF() {
         initComponents();
     }
-ArrayList<Double> result;
+    ArrayList<Double> result;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -226,34 +227,58 @@ ArrayList<Double> result;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAActionPerformed
 
-        public void okey() {
+    public void okey() {
         try {
-            Socket s = new Socket("127.0.0.1", 1333); 
-            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
-            BufferedReader reader = new BufferedReader(stream);
-            String message = reader.readLine(); 
-            System.out.println(message); 
-            reader.close();
-        } catch(IOException ex) {
-            ex.printStackTrace(); 
+            Socket clientSocket = new Socket("127.0.0.1", 1333);
+            TransferableObj tObj = new TransferableObj();
+            tObj.setXn(Double.parseDouble(txtXn.getText()));
+            tObj.setXk(3.7);
+            tObj.setDx(0.5);
+            tObj.setA(1.6);
+            System.out.println(tObj.getXn());
+            System.out.println(tObj.getXk());
+            System.out.println(tObj.getDx());
+            System.out.println(tObj.getA());
+
+            ObjectOutputStream oOut = new ObjectOutputStream(clientSocket.getOutputStream());
+            ObjectInputStream oIn = new ObjectInputStream(clientSocket.getInputStream());
+            oOut.writeObject(tObj);
+
+            TransferableObj iObj = (TransferableObj) oIn.readObject();
+//            System.out.println(iObj.getXn());
+//            System.out.println(iObj.getXk());
+//            System.out.println(iObj.getDx());
+//            System.out.println(iObj.getA());
+//            System.out.println(iObj.getResult());
+            result = iObj.getResult();
+            for (int i = 0; i < result.size(); i++) {
+                jTextArea1.append(result.get(i).toString() + "\r\n");
+            }
+            oOut.close();
+            oIn.close();
+
+        } catch (IOException ex) {
+            System.err.println(ex);
+        } catch (Exception ex) {
+            System.err.println(ex);
         }
     }
-    
+
     private void okeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okeyActionPerformed
 
 
-    
-        double xn = Double.parseDouble(txtXn.getText());
-        double xk = Double.parseDouble(txtXk.getText());
-        double dx = Double.parseDouble(txtDx.getText());
-        double a = Double.parseDouble(txtA.getText());
-        Calculator instance = new Calculator();
-        result = instance.TakA(xn, xk, dx, a);
-        for (int i = 0; i < result.size(); i++) {
-            jTextArea1.append(result.get(i).toString() + "\r\n");
+
+//        double xn = Double.parseDouble(txtXn.getText());
+//        double xk = Double.parseDouble(txtXk.getText());
+//        double dx = Double.parseDouble(txtDx.getText());
+//        double a = Double.parseDouble(txtA.getText());
+//        Calculator instance = new Calculator();
+//        result = instance.TakA(xn, xk, dx, a);
+//        for (int i = 0; i < result.size(); i++) {
+//            jTextArea1.append(result.get(i).toString() + "\r\n");
+        okey();
     }//GEN-LAST:event_okeyActionPerformed
-    okey();
-}
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String save = jTextArea1.getText();
@@ -279,38 +304,37 @@ ArrayList<Double> result;
                 System.out.println(line);
             }
             reader.close(); // TODO add your handling code here:
-        }catch(Exception ex) {
-    ex.printStackTrace();
-}
-        
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-      try {
-        FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
-      ObjectOutputStream os = new ObjectOutputStream(fileStream);
-      os.writeObject(result);
-      os.close();
-      }
-      catch(Exception ex) {
-    ex.printStackTrace();
-}
-      
-      
+        try {
+            FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
+            ObjectOutputStream os = new ObjectOutputStream(fileStream);
+            os.writeObject(result);
+            os.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+
 // TODO add your handling code here:
     }//GEN-LAST:event_saveActionPerformed
 
     private void jActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jActionPerformed
-     ArrayList<Double> lr;
+        ArrayList<Double> lr;
         try {
             FileInputStream fileStream = new FileInputStream("ResultObject.txt");
-            ObjectInputStream os = new ObjectInputStream(fileStream); 
-            lr = (ArrayList<Double>)os.readObject();
-            jTextArea1.append(lr + "\r\n"); 
-        } catch (Exception ex) { 
-            ex.printStackTrace() ;
+            ObjectInputStream os = new ObjectInputStream(fileStream);
+            lr = (ArrayList<Double>) os.readObject();
+            jTextArea1.append(lr + "\r\n");
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-       // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jActionPerformed
 
     private void txtXnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtXnActionPerformed
