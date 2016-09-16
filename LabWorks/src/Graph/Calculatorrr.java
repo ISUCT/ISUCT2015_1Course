@@ -7,6 +7,18 @@ package Graph;
 import java.util.ArrayList;
 import java.io.*;
 import java.net.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 
 /**
  *
@@ -20,6 +32,7 @@ public class Calculatorrr extends javax.swing.JFrame {
     public Calculatorrr() {
         initComponents();
     }
+    ArrayList<Double> result;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -187,40 +200,59 @@ public class Calculatorrr extends javax.swing.JFrame {
 
     private void txtXnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtXnActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtXnActionPerformed
-ArrayList<Double> result;
+
 
  
     public void jButton1() {
         try {
             Socket s = new Socket("127.0.0.1", 1467); 
-            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
-            BufferedReader reader = new BufferedReader(stream);
-            //Strig message = reader.readLine(); 
-           String message = null;
-            message = reader.readLine();
-            txtresult.append(message);
+            TransferableObj tObj = new TransferableObj();
+            tObj.setXn(Double.parseDouble(txtXn.getText()));
+            tObj.setXk(Double.parseDouble(txtXk.getText()));
+            tObj.setDx(Double.parseDouble(txtdx.getText()));
             
-            reader.close();
-        } catch(IOException ex) {
-            ex.printStackTrace(); 
+            System.out.println(tObj.getXn());
+            System.out.println(tObj.getXk());
+            System.out.println(tObj.getDx());
+            
+
+            ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
+            ObjectInputStream oIn = new ObjectInputStream(s.getInputStream());
+            oOut.writeObject(tObj);
+
+            TransferableObj iObj = (TransferableObj) oIn.readObject();
+              result = iObj.getResult();
+              txtresult.removeAll();
+            for (int i = 0; i < result.size(); i++) {
+                txtresult.append(result.get(i).toString() + "\r\n");
+            }
+            oOut.close();
+            oIn.close();
+            
+            
+          } catch (IOException ex) {
+            System.err.println(ex);
+        } catch (Exception ex) {
+            System.err.println(ex);
         }
     }
+   
     
      
     
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
-     double xn = Double.parseDouble(txtXn.getText());
-     double xk = Double.parseDouble(txtXk.getText());
-     double dx = Double.parseDouble(txtdx.getText());
-     Calculator instance = new Calculator();
-      result = instance.TaskA(xn, xk, dx);
-        for (int i = 0; i < 5; i++) {
-            txtresult.append(result.get(i).toString()+"\r\n");
+     //double xn = Double.parseDouble(txtXn.getText());
+     //double xk = Double.parseDouble(txtXk.getText());
+     //double dx = Double.parseDouble(txtdx.getText());
+     //Calculator instance = new Calculator();
+      //result = instance.TaskA(xn, xk, dx);
+        //for (int i = 0; i < 5; i++) {
+            //txtresult.append(result.get(i).toString()+"\r\n");
      //txtResult.setText(Double.toString(result));
-        }
         jButton1();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -288,7 +320,7 @@ ArrayList<Double> result;
             
          catch (Exception ex) { 
             ex.printStackTrace() ;
-                }
+}
        
         // TODO add your handling code here:
     }//GEN-LAST:event_olrActionPerformed
