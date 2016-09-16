@@ -314,7 +314,7 @@ ArrayList<Double> result;
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new calcFjFrame().setVisible(true);
+                new calc().setVisible(true);
             }
         });
     }
