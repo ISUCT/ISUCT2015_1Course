@@ -18,11 +18,11 @@ public class Client {
             Socket clientSocket = new Socket("127.0.0.1", 1500);
             TransferableObj tObj = new TransferableObj();
             //tObj.setText("Seted on client");
-            tObj.setA(2.0);
-            tObj.setB(3.0);
-            tObj.setXn(0.11);
-            tObj.setXk(0.36);
-            tObj.setDx(0.05);
+            tObj.setA(1.2);
+            tObj.setB(0.48);
+            tObj.setXn(0.7);
+            tObj.setXk(2.2);
+            tObj.setDx(0.3);
             System.out.println(tObj.getXn());
             System.out.println(tObj.getA());
             System.out.println(tObj.getB());
