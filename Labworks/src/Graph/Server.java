@@ -3,17 +3,20 @@
  * and open the template in the editor.
  */
 package Graph;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
 
-
+/**
+ *
+ * @author 
+ */
 public class Server {
     public void jButton() {
         try {
-             ServerSocket serverSocket = new ServerSocket(1500);
+             ServerSocket serverSocket = new ServerSocket(1818);
             while(true){
                 Socket s = serverSocket.accept();
                 ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
@@ -26,7 +29,7 @@ public class Server {
                 System.out.println(iObj.getDx());
                 
                  Calculator instance = new Calculator();
-      
+        //iObj.setResult instance.TaskA(xn, xk, dx, a, b);
        
                 
                 iObj.setXn (iObj.getXn()+1);
@@ -35,7 +38,8 @@ public class Server {
                 iObj.setA(iObj.getA()+1);
                 iObj.setB(iObj.getB()+1);
                 oOut.writeObject(iObj);
-              
+               // iObj.setXn (iObj.getXn() +1);
+                //iObj.setDx
                 
                 oOut.close();
                 oIn.close();
@@ -46,7 +50,7 @@ public class Server {
             System.err.println(ex);
         }
 }
-    
+ 
         
     
     
