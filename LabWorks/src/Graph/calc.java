@@ -6,6 +6,7 @@ package Graph;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.net.Socket;
 
 /**
  *
@@ -206,7 +207,20 @@ public class calc extends javax.swing.JFrame {
     private void jffXnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jffXnActionPerformed
 
     }//GEN-LAST:event_jffXnActionPerformed
-
+public void jButton1() {
+        try {
+            Socket s = new Socket("127.0.0.1", 1455); 
+            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
+            BufferedReader reader = new BufferedReader(stream);
+            //String message = reader.readLine(); 
+           String message = null;
+           message = reader.readLine();
+           jTextArea1.append(message);
+            reader.close();
+        } catch(IOException ex) {
+            ex.printStackTrace(); 
+        }
+}
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
         double a = Double.parseDouble(jffa.getText());
@@ -219,6 +233,7 @@ public class calc extends javax.swing.JFrame {
         for (double i : result) {
             jTextArea1.append(Double.toString(i) + "\r\n");
         }
+        jButton1();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
