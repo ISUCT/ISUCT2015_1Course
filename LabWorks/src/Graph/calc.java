@@ -209,7 +209,7 @@ public class calc extends javax.swing.JFrame {
     }//GEN-LAST:event_jffXnActionPerformed
 public void jButton1() {
         try {
-            Socket s = new Socket("127.0.0.1", 1455); 
+            Socket s = new Socket("127.0.0.1", 5455); 
             InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
             BufferedReader reader = new BufferedReader(stream);
             //String message = reader.readLine(); 
@@ -223,16 +223,16 @@ public void jButton1() {
 }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
-        double a = Double.parseDouble(jffa.getText());
-        double b = Double.parseDouble(jffb.getText());
-        double xn = Double.parseDouble(jffXn.getText());
-        double xk = Double.parseDouble(jffxk.getText());
-        double dx = Double.parseDouble(jffdx.getText());
-        Calculator instance = new Calculator();
-        result = instance.TaskA(xn, xk, dx, a, b);
-        for (double i : result) {
-            jTextArea1.append(Double.toString(i) + "\r\n");
-        }
+//        double a = Double.parseDouble(jffa.getText());
+//        double b = Double.parseDouble(jffb.getText());
+//        double xn = Double.parseDouble(jffXn.getText());
+//        double xk = Double.parseDouble(jffxk.getText());
+//        double dx = Double.parseDouble(jffdx.getText());
+//        Calculator instance = new Calculator();
+//        result = instance.TaskA(xn, xk, dx, a, b);
+//        for (double i : result) {
+//            jTextArea1.append(Double.toString(i) + "\r\n");
+//        }
         jButton1();
     }//GEN-LAST:event_jButton1ActionPerformed
 
