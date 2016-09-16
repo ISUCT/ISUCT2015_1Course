@@ -4,6 +4,7 @@
  */
 package lab5;
 import java.io.*;
+import java.util.ArrayList;
 
 
 /**
@@ -17,7 +18,15 @@ public class Lol implements Serializable {
     private double xn;
     private double xk; 
     private double dx; 
+    ArrayList<Double> result;
 
+        public ArrayList<Double> getResult() {
+        return result;
+    }
+
+    public void setResult(ArrayList<Double> result) {
+            this.result = result;
+    }
     public double getA() {
         return a;
     }
