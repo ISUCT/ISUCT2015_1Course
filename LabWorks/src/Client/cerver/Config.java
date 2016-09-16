@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author stud_5
  */
 
-public class TransferableObj implements Serializable{
+public class Config implements Serializable{
     private String text;
     private Integer a;
     private Double b;

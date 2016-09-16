@@ -12,9 +12,10 @@ public class Server {
       ServerSocket serverSock = new ServerSocket(1333);
             while(true) {
                 Socket s = serverSock.accept();
-                PrintWriter writer = new PrintWriter(s.getOutputStream()); 
-                writer.println("Have a nice day today! We've got a server now, You're Welcome"); 
-                writer.close(); 
+                ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
+                ObjectInputStream oIn = new ObjectInputStream(s.getInputStream());
+                Config con = (Config) oIn.readObject();
+                System.out.println ("Got it from client: \r\n" + "A = " + con.getA() + "\r\n" + "B = " + con.getB() + "\r\n" +"Xn = " + con.get() + "Xk = " + con.getXk() + "\r\n" + "Dx = " + con.getDx() + "\r\n");
             }
         } catch(IOException ex) {
             ex.printStackTrace(); 

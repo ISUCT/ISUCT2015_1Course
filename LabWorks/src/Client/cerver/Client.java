@@ -18,7 +18,7 @@ public class Client {
     public void go() {
         try {
             Socket clientSocket = new Socket("127.0.0.1", 5000);
-            TransferableObj tObj = new TransferableObj();
+            Config tObj = new Config();
             tObj.setText("Seted on client");
             tObj.setA(1);
             tObj.setB(5.0);
@@ -30,7 +30,7 @@ public class Client {
             ObjectInputStream oIn = new ObjectInputStream(clientSocket.getInputStream());
             oOut.writeObject(tObj);
 
-            TransferableObj iObj = (TransferableObj) oIn.readObject();
+            Config iObj = (Config) oIn.readObject();
             System.out.println(iObj.getText());
             System.out.println(iObj.getA());
             System.out.println(iObj.getB());
@@ -50,7 +50,7 @@ public class Client {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ClientSample client = new ClientSample();
+        Client client = new Client();
         client.go();
     }
 }
