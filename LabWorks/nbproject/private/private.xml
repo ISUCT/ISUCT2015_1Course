@@ -3,15 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/ResultObject.txt</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/calc.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/JFrame.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/LastRes.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Month/Difference.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Calculator.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Month/MyManth.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/test/Graph/CalculatorTest.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Client.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/test/Month/DifferenceTest.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/Result.txt</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/test/Month/MyManthTest.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/calcFjFrame.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/JFrame.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Calculator.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Month/MyManth.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/server.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/test/Graph/CalculatorTest.java</file>
         </group>
     </open-files>
 </project-private>

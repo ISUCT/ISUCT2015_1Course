@@ -208,6 +208,7 @@ public class calc extends javax.swing.JFrame {
     }//GEN-LAST:event_jffXnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      
         double a = Double.parseDouble(jffa.getText());
         double b = Double.parseDouble(jffb.getText());
         double xn = Double.parseDouble(jffXn.getText());
