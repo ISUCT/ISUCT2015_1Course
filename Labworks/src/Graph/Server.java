@@ -16,7 +16,7 @@ import java.io.ObjectOutputStream;
 public class Server {
     public void jButton() {
         try {
-             ServerSocket serverSocket = new ServerSocket(1818);
+             ServerSocket serverSocket = new ServerSocket(1500);
             while(true){
                 Socket s = serverSocket.accept();
                 ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
