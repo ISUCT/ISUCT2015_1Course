@@ -232,9 +232,9 @@ public class JF extends javax.swing.JFrame {
             Socket clientSocket = new Socket("127.0.0.1", 1333);
             TransferableObj tObj = new TransferableObj();
             tObj.setXn(Double.parseDouble(txtXn.getText()));
-            tObj.setXk(3.7);
-            tObj.setDx(0.5);
-            tObj.setA(1.6);
+            tObj.setXk(Double.parseDouble(txtXk.getText()));
+            tObj.setDx(Double.parseDouble(txtDx.getText()));
+            tObj.setA(Double.parseDouble(txtA.getText()));
             System.out.println(tObj.getXn());
             System.out.println(tObj.getXk());
             System.out.println(tObj.getDx());
@@ -251,6 +251,7 @@ public class JF extends javax.swing.JFrame {
 //            System.out.println(iObj.getA());
 //            System.out.println(iObj.getResult());
             result = iObj.getResult();
+            jTextArea1.removeAll();
             for (int i = 0; i < result.size(); i++) {
                 jTextArea1.append(result.get(i).toString() + "\r\n");
             }
