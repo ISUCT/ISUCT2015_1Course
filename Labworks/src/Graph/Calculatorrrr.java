@@ -275,6 +275,7 @@ public class Calculatorrrr extends javax.swing.JFrame {
         FileOutputStream fileStream = new FileOutputStream("ResultObject.txt");
         ObjectOutputStream os = new ObjectOutputStream (fileStream);
            Object characterOne = null;
+           
         os.writeObject(result);
         os.close();
        
