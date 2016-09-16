@@ -59,8 +59,6 @@ public class Kashka extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtres = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        LastRes = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,10 +97,6 @@ public class Kashka extends javax.swing.JFrame {
         txtres.setRows(5);
         jScrollPane1.setViewportView(txtres);
 
-        LastRes.setColumns(20);
-        LastRes.setRows(5);
-        jScrollPane2.setViewportView(LastRes);
-
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
@@ -130,15 +124,10 @@ public class Kashka extends javax.swing.JFrame {
                             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                                        .addComponent(jButton1)))
+                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                .addComponent(jButton1)
                                 .addGap(56, 56, 56))))))
         );
         jInternalFrame1Layout.setVerticalGroup(
@@ -170,9 +159,7 @@ public class Kashka extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -202,52 +189,48 @@ public class Kashka extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     ArrayList<Double> y;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Plushka g = new Plushka();
-      Lol lol = new Lol();
-      lol.setXn(Double.parseDouble(txtxn.getText()));
-      lol.setXk(Double.parseDouble(txtxk.getText()));
-      lol.setDx(Double.parseDouble(txtdx.getText()));
-      lol.setA(Double.parseDouble(txta.getText()));
-      lol.setB(Double.parseDouble(txtb.getText()));
-       // y = g.Pachka(Double.parseDouble(txtxn.getText()), Double.parseDouble(txtxk.getText()), Double.parseDouble(txtdx.getText()), Double.parseDouble(txta.getText()), Double.parseDouble(txtb.getText()));
+        Plushka g = new Plushka(); 
+        Lol lol = new Lol();
+        lol.setXn(Double.parseDouble(txtxn.getText()));
+        lol.setXk(Double.parseDouble(txtxk.getText()));
+        lol.setDx(Double.parseDouble(txtdx.getText()));
+        lol.setA(Double.parseDouble(txta.getText()));
+        lol.setB(Double.parseDouble(txtb.getText()));
+        // y = g.Pachka(Double.parseDouble(txtxn.getText()), Double.parseDouble(txtxk.getText()), Double.parseDouble(txtdx.getText()), Double.parseDouble(txta.getText()), Double.parseDouble(txtb.getText()));
 
-      //  for (Double i : y) {
-       //     txtres.append(i.toString() + "\r\n");
-       // }
-        go();   
+        //  for (Double i : y) {
+        //     txtres.append(i.toString() + "\r\n");
+        // }
+        go(lol);
     }//GEN-LAST:event_jButton1ActionPerformed
-      public void go() {
-        try {            
-            Socket s = new Socket("127.0.0.1", 6666); 
-            
-            Lol lol = new Lol();
-            lol.setA(0.4);
-            lol.setB(0.8);
-            lol.setXn(3.2);
-            lol.setXk(6.2);
-            lol.setDx(0.6);
-            
+    public void go(Lol lol) {
+        try {
+            Socket s = new Socket("127.0.0.1", 6666);
+
+//            lol.setA(0.4);
+//            lol.setB(0.8);
+//            lol.setXn(3.2);
+//            lol.setXk(6.2);
+//            lol.setDx(0.6);
             ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
             ObjectInputStream oIn = new ObjectInputStream(s.getInputStream());
             oOut.writeObject(lol);
-            
-           Lol nya = (Lol) oIn.readObject();
-           txtres.append(nya.getResult().toString());
-        
+
+            Lol nya = (Lol) oIn.readObject();
+
+            y = nya.getResult();
+           
+            for (Double i : y) {
+                txtres.append(i.toString() + "\r\n");
+            }
+
             oOut.close();
             oIn.close();
-        } catch(Exception ex) {
-            ex.printStackTrace(); 
-        }
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } 
     }
-   
-
-
-    
-
-    
-       
-    
 
     /**
      * @param args the command line arguments
@@ -280,11 +263,11 @@ public class Kashka extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Kashka().setVisible(true);
+               
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea LastRes;
     private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
@@ -295,7 +278,6 @@ public class Kashka extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txta;
     private javax.swing.JTextField txtb;
     private javax.swing.JTextField txtdx;
