@@ -6,6 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -130,12 +131,27 @@
       </Events>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jffXn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.11"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jffxk">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.36"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jffdx">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.05"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jffa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="2.0"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jffaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -163,6 +179,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="jffb">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="3.0"/>
+      </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>

@@ -35,11 +35,12 @@ public class Client {
             oOut.writeObject(tObj);
             
             TransferableObj iObj = (TransferableObj) oIn.readObject();
-            System.out.println(iObj.getXn());
-            System.out.println(iObj.getA());
-            System.out.println(iObj.getB());
-             System.out.println(iObj.getXk());
-              System.out.println(iObj.getDx());
+//            System.out.println(iObj.getXn());
+//            System.out.println(iObj.getA());
+//            System.out.println(iObj.getB());
+//             System.out.println(iObj.getXk());
+//              System.out.println(iObj.getDx());
+              System.out.println(iObj.getResult());
             
             oOut.close();
             oIn.close();

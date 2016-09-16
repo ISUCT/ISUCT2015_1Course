@@ -30,7 +30,7 @@ public class Server {
                 System.out.println(iObj.getDx());
                 
                  Calculator instance = new Calculator();
-        //iObj.setResult instance.TaskA(xn, xk, dx, a, b);
+        iObj.setResult(instance.TaskA(iObj.getXn(), iObj.getXk(), iObj.getDx(), iObj.getA(), iObj.getB()));
        
                 
                 iObj.setXn (iObj.getXn()+1);

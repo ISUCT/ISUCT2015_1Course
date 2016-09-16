@@ -5,6 +5,7 @@
 package Proga;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,11 +17,19 @@ public class TransferableObj implements Serializable{
     private Double dx;
     private Double a;
     private Double b;
+ArrayList<Double> result;
 
+    public ArrayList <Double> getResult() {
+        return result;
+    }
+
+    public void setResult(ArrayList<Double> result) {
+       this.result = result;
+       
+    }
     public Double getXn() {
         return xn;
     }
-
     public void setXn(Double xn) {
         this.xn = xn;
     }

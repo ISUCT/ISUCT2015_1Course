@@ -16,6 +16,8 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -67,6 +69,19 @@ public class JFrame2 extends javax.swing.JFrame {
             }
         });
 
+        jffXn.setText("0.11");
+
+        jffxk.setText("0.36");
+
+        jffdx.setText("0.05");
+
+        jffa.setText("2.0");
+        jffa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jffaActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("xn=");
 
         jLabel2.setText("xk=");
@@ -76,6 +91,8 @@ public class JFrame2 extends javax.swing.JFrame {
         jLabel4.setText("a=");
 
         jLabel5.setText("b=");
+
+        jffb.setText("3.0");
 
         jffResult.setColumns(20);
         jffResult.setRows(5);
@@ -192,34 +209,66 @@ public class JFrame2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void jButton() {
+    public void jButton() throws ClassNotFoundException {
         try {
             Socket s = new Socket("127.0.0.1", 1818);
-            InputStreamReader stream = new InputStreamReader(s.getInputStream());
-            BufferedReader reader = new BufferedReader(stream);
-            String message = null;
-            message = reader.readLine();
-            jffResult.append(message);
-          reader.close();
+            TransferableObj tObj = new TransferableObj();
+            tObj.setXn(Double.parseDouble(jffXn.getText()));
+            tObj.setXk(Double.parseDouble(jffxk.getText()));
+            tObj.setDx(Double.parseDouble(jffdx.getText()));
+            tObj.setA(Double.parseDouble(jffa.getText()));
+             tObj.setB(Double.parseDouble(jffb.getText()));
+//            tObj.setA(2.0);
+//            tObj.setB(3.0);
+//            tObj.setXn(0.11);
+//            tObj.setXk(0.36);
+//            tObj.setDx(0.05);
+            System.out.println(tObj.getXn());
+            System.out.println(tObj.getA());
+            System.out.println(tObj.getB());
+            System.out.println(tObj.getXk());
+            System.out.println(tObj.getDx());
+            ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
+            ObjectInputStream oIn = new ObjectInputStream(s.getInputStream());
+            oOut.writeObject(tObj);
+            TransferableObj iObj = (TransferableObj) oIn.readObject();
+            result = iObj.getResult();
+            jffResult.removeAll();
+            for (int i = 0; i < result.size(); i++) {
+              jffResult.append(result.get(i).toString() + "\r\n");
+                 }
+            oOut.close();
+            oIn.close();
+//            InputStreamReader stream = new InputStreamReader(s.getInputStream());
+//            BufferedReader reader = new BufferedReader(stream);
+//            String message = null;
+//            message = reader.readLine();
+//            jffResult.append(message);
+         // reader.close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        double a = Double.parseDouble(jffa.getText());
-        double b = Double.parseDouble(jffb.getText());
-        double xn = Double.parseDouble(jffXn.getText());
-        double xk = Double.parseDouble(jffxk.getText());
-        double dx = Double.parseDouble(jffdx.getText());
-        Calculator instance = new Calculator();
-        result = instance.TaskA(xn, xk, dx, a, b);
-        for (double i : result) {
-            jffResult.append(Double.toString(i) + "\r\n");
-            // TODO add your handling code here:
+        try {
+            //        double a = Double.parseDouble(jffa.getText());
+//        double b = Double.parseDouble(jffb.getText());
+//        double xn = Double.parseDouble(jffXn.getText());
+//        double xk = Double.parseDouble(jffxk.getText());
+//        double dx = Double.parseDouble(jffdx.getText());
+//        Calculator instance = new Calculator();
+//        result = instance.TaskA(xn, xk, dx, a, b);
+//        for (double i : result) {
+//            jffResult.append(Double.toString(i) + "\r\n");
+// TODO add your handling code here:
+jButton();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JFrame2.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
-        jButton();
-    }
+//        jButton();
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String save = jffResult.getText();
@@ -273,6 +322,10 @@ public class JFrame2 extends javax.swing.JFrame {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_oyActionPerformed
+
+    private void jffaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jffaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jffaActionPerformed
 
     /**
      * @param args the command line arguments
