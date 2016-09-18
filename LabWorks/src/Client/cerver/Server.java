@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package Client.cerver;
-import java.io.*;
 import java.net.*;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -19,7 +18,7 @@ public class Server {
                 Config con = (Config) oIn.readObject();
                 System.out.println ("Got it from client: \r\n" + "A = " + con.getA() + "\r\n" + "B = " + con.getB() + "\r\n" +"Xn = " + con.getXn() + "Xk = " + con.getXk() + "\r\n" + "Dx = " + con.getDx() + "\r\n");
                 
-                CalcF calc = new CalcF();
+                Calculator calc = new Calculator();
                 con.setResult(calc.f(con.getXn(), con.getXk(), con.getDx(), con.getA(), con.getB()));
                 oOut.writeObject(con);
                 oOut.close();

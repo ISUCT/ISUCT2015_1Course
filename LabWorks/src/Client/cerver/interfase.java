@@ -14,7 +14,7 @@ import java.net.Socket;
 public class interfase extends javax.swing.JFrame {
      
  
-public Calculator() { 
+public interfase() { 
 initComponents();
 }
     @SuppressWarnings("unchecked")
@@ -107,7 +107,7 @@ initComponents();
     }// </editor-fold>//GEN-END:initComponents
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-        CalcF calc = new CalcF();
+        Calculator calc = new Calculator();
         Config con = new Config();
         con.setA(Double.parseDouble(a.getText()));
         con.setB(Double.parseDouble(b.getText()));
@@ -146,7 +146,7 @@ initComponents();
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Calc_wia_Serv().setVisible(true);
+                new interfase().setVisible(true);
             }
         });
     }
