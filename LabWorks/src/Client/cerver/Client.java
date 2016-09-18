@@ -9,31 +9,31 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-/**
- *
- * @author stud_6
- */
+
 public class Client {
 
     public void go() {
         try {
             Socket clientSocket = new Socket("127.0.0.1", 5000);
-            Config tObj = new Config();
-            tObj.setText("Seted on client");
-            tObj.setA(1);
-            tObj.setB(5.0);
-            System.out.println(tObj.getText());
-            System.out.println(tObj.getA());
-            System.out.println(tObj.getB());
+            
+            Config con = new Config();
+            con.setText("Seted on client");
+            con.setA(1.3);
+            con.setB(5.0);
+            con.setXn (0.55);
+            con.setXk (1.5);
+            con.setDx(0.3);
+            
+            System.out.println("Have it on client: \r\n" + "A = " + con.getA() + "\r\n" + "B = " + con.getB() + "\r\n" + "Xn = " + con.getXn() + "\r\n" + "Xk = " + con.getXk() + "\r\n" + "Dx = " + con.getDx() + "\r\n");
 
             ObjectOutputStream oOut = new ObjectOutputStream(clientSocket.getOutputStream());
             ObjectInputStream oIn = new ObjectInputStream(clientSocket.getInputStream());
-            oOut.writeObject(tObj);
+            oOut.writeObject(con);
 
-            Config iObj = (Config) oIn.readObject();
-            System.out.println(iObj.getText());
-            System.out.println(iObj.getA());
-            System.out.println(iObj.getB());
+            Config conf = (Config) oIn.readObject();
+            System.out.println(con.getText());
+            System.out.println(con.getA());
+            System.out.println(con.getB());
 
             oOut.close();
             oIn.close();

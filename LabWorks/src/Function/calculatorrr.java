@@ -11,11 +11,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.io.ObjectOutputStream;
 
-/**
- *
- * @author UI
- */
+
 public class calculatorrr extends javax.swing.JFrame {
 
     /**
