@@ -7,7 +7,6 @@ package Function;
 
 import java.util.ArrayList;
 import java.io.*;
-import ClientServer.Client;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -181,7 +180,18 @@ public class Counter extends javax.swing.JFrame {
              txtresult.append(Double.toString(i)+"\r\n");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ public void okey() {
+        try {
+            Socket s = new Socket("127.0.0.1", 1335); 
+            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
+            BufferedReader reader = new BufferedReader(stream);
+            String message = reader.readLine(); 
+            System.out.println(message); 
+            reader.close();
+        } catch(IOException ex) {
+            ex.printStackTrace(); 
+        }
+    }
     private void txtdxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdxActionPerformed
