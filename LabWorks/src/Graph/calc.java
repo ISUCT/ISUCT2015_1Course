@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.io.*;
 import java.net.Socket;
 
+
 /**
  *
  * @author Stud_5
@@ -19,8 +20,9 @@ public class calc extends javax.swing.JFrame {
      */
     public calc() {
         initComponents();
+        
     }
-
+     ArrayList<Double> result;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -210,17 +212,44 @@ public class calc extends javax.swing.JFrame {
 public void jButton1() {
         try {
             Socket s = new Socket("127.0.0.1", 5455); 
-            InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
-            BufferedReader reader = new BufferedReader(stream);
-            //String message = reader.readLine(); 
-           String message = null;
-           message = reader.readLine();
-           jTextArea1.append(message);
-            reader.close();
-        } catch(IOException ex) {
-            ex.printStackTrace(); 
+         
+            TransferableObj tObj = new TransferableObj();
+            tObj.setXn(Double.parseDouble(jffXn.getText()));
+            tObj.setXk(Double.parseDouble(jffxk.getText()));
+            tObj.setDx(Double.parseDouble(jffdx.getText()));
+            tObj.setA(Double.parseDouble(jffa.getText()));
+             tObj.setB(Double.parseDouble(jffb.getText()));
+//            tObj.setA(2.0);
+//            tObj.setB(3.0);
+//            tObj.setXn(0.11);
+//            tObj.setXk(0.36);
+//            tObj.setDx(0.05);
+            System.out.println(tObj.getXn());
+            System.out.println(tObj.getA());
+            System.out.println(tObj.getB());
+            System.out.println(tObj.getXk());
+            System.out.println(tObj.getDx());
+            ObjectOutputStream oOut = new ObjectOutputStream(s.getOutputStream());
+            ObjectInputStream oIn = new ObjectInputStream(s.getInputStream());
+            oOut.writeObject(tObj);
+            TransferableObj iObj = (TransferableObj) oIn.readObject();
+            result = iObj.getResult();
+            jTextArea1.removeAll();
+            for (int i = 0; i < result.size(); i++) {
+              jTextArea1.append(result.get(i).toString() + "\r\n");
+                 }
+            oOut.close();
+            oIn.close();
+//            InputStreamReader stream = new InputStreamReader(s.getInputStream());
+//            BufferedReader reader = new BufferedReader(stream);
+//            String message = null;
+//            message = reader.readLine();
+//            jffResult.append(message);
+         // reader.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-}
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
 //        double a = Double.parseDouble(jffa.getText());
@@ -248,7 +277,7 @@ public void jButton1() {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_saveActionPerformed
-ArrayList<Double> result;
+
     private void readActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_readActionPerformed
         
 
