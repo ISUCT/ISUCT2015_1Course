@@ -46,20 +46,20 @@ public class HomeDuckTest {
      */
     
     @Test
-    public void testMallardQuack() {
-        Duck mallard = new HomeDuck();
-        mallard.performQuack();
-        assertEquals("Quack!!!\r\n", baos.toString());
+    public void testHomeQuack() {
+        Duck home = new HomeDuck();
+        home.performQuack();
+        assertEquals("Quak!\r\n", baos.toString());
     }
 
     /**
      *
      */
     @Test
-    public void testRedheadDuck() {
-        Duck readhead = new YellowheadDuck();
-        readhead.performFly();
-        assertEquals("I'm flying!!\r\n", baos.toString());
+    public void testYellowheadDuck() {
+        Duck yellowhead = new YellowheadDuck();
+        yellowhead.performFly();
+        assertEquals("I'm flying!\r\n", baos.toString());
     }
 
     /**
@@ -69,6 +69,6 @@ public class HomeDuckTest {
     public void testModelDuck() {
         Duck model = new ModelDuck();
         model.performQuack();
-        assertEquals("Quack!!!\r\n", baos.toString());
+        assertEquals("Quak!\r\n", baos.toString());
     }
 }

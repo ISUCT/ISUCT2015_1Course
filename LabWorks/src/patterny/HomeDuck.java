@@ -16,7 +16,7 @@ public class HomeDuck extends Duck {
     }
     @Override
     public void display(){
-        System.out.println("I'm a Mallard duck!");
+        System.out.println("I'm a Home duck!");
     }
     
 }
