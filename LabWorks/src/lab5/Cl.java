@@ -17,7 +17,7 @@ public class Cl {
     
      public void go() {
         try {
-            Socket s = new Socket("192.168.12.205", 1818); 
+            Socket s = new Socket("192.168.12.205", 6666); 
             InputStreamReader stream = new InputStreamReader(s.getInputStream()); 
             BufferedReader reader = new BufferedReader(stream);
             String message = reader.readLine(); 
