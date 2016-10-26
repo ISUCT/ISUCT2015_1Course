@@ -29,13 +29,7 @@ public class WeatherData extends Observable {
         }
     }
 
- //   @Override
- //   public void notifyObservers() {
- //       for (int i=0; i<observers.size(); i++){
- //       Observer observer = (Observer)observers.get(i);
- //       observer.update(temperature, humidity, pressure);
- //   }
- // }
+
   public void measurementsChanged() {
       setChanged();
       notifyObservers();
