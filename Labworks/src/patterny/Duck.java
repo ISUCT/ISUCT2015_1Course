@@ -32,6 +32,6 @@ public abstract class Duck {
     flyBehavior = fb;
 }
     public void setQuackBehavior(Quackbehavior qb){
-        quackBehavior = qb;
+        Quackbehavior = qb;
     }
 }
