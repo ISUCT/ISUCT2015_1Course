@@ -9,9 +9,9 @@ package observer;
  *
  * @author UI
  */
-public class observer {
-  public interface Observer {
+
+  public interface observer {
     public void update(float temp, float humidity, float pressure);
     
   }  
-}
+
