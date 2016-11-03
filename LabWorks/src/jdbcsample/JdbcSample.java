@@ -12,7 +12,7 @@ import java.sql.*;
  */
 public class JdbcSample {
     static final String JDBC_DRIVER = "org.postgresql.Driver";
-    static final String DB_URL = "jdbc:postgresql://localhost:5432/kursovaya";
+    static final String DB_URL = "jdbc:postgresql://109.108.33.187/localhost:5432/BD";
 
     //  Database credentials
     static final String USER = "test";
@@ -35,7 +35,7 @@ public class JdbcSample {
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
-            String sql  = "select * from Zavod";
+            String sql  = "select * from zavod";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
