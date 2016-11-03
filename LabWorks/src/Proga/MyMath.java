@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Test;
+package Proga;
 
 /**
  *
@@ -15,7 +15,7 @@ public class MyMath {
     
 }
 
-    static float summ(float a, float b) {
+    public static float summ(float a, float b) {
        return a+b;
     }
 }

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Calendar;
+package patterny;
 
+import Calendar.MyCalendar;
+import Calendar.MyCalendar;
 import java.util.Calendar;
 import java.util.Date;
 import org.junit.After;
@@ -70,6 +72,18 @@ public class MyCalendarTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of main method, of class MyCalendar.
+     */
+    @Test
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        MyCalendar.main(args);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }
