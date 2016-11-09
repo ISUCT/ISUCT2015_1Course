@@ -24,8 +24,8 @@ public class jdbcsample {
     static final String DB_URL = "jdbc:postgresql://localhost:5432/Kursovaya";
 
     //  Database credentials
-    static final String USER = "test";
-    static final String PASS = "test";
+    static final String USER = "postgres";
+    static final String PASS = "1";
 
   
     public static void main(String[] args) {
@@ -37,18 +37,18 @@ public class jdbcsample {
             Class.forName(JDBC_DRIVER);
 
             //STEP 3: Open a connection
-            System.out.println("Connecting to database Kursovaya");
+            System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
             stmt = conn.createStatement();
-            String sql  = "select * from Sick";
+            String sql  = "select * from Person";
             ResultSet rs = stmt.executeQuery(sql);
 
             //STEP 5: Extract data from result set
             while (rs.next()) {
-                System.out.print(rs.getInt("N_sick")+ ",");
-                System.out.println(rs.getString("Diagnosis"));
+                System.out.print(rs.getInt("N_person")+ ",");
+                System.out.println(rs.getString("date_of_birth"));
 //                //Retrieve by column name
 //                int id = rs.getInt("id");
 //                int age = rs.getInt("age");
