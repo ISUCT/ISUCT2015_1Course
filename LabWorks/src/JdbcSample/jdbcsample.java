@@ -25,7 +25,7 @@ public class jdbcsample {
 
     //  Database credentials
     static final String USER = "postgres";
-    static final String PASS = "1";
+    static final String PASS = "elyamasha";
 
   
     public static void main(String[] args) {
