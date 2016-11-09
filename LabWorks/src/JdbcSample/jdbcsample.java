@@ -12,7 +12,7 @@ import java.sql.*;
  */
 
    
-//STEP 1. Import required packages
+
 
 
 
@@ -37,7 +37,7 @@ public class jdbcsample {
             Class.forName(JDBC_DRIVER);
 
             //STEP 3: Open a connection
-            System.out.println("Connecting to database...");
+            System.out.println("Connecting to database Kursovaya");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //STEP 4: Execute a query
             System.out.println("Creating statement...");
@@ -87,7 +87,7 @@ public class jdbcsample {
                 se.printStackTrace();
             }//end finally try
         }//end try
-        System.out.println("Goodbye!");
+        System.out.println("Goodbye, see you!");
     }
 
 }
