@@ -23,8 +23,8 @@ public class jdbcsample {
     static final String DB_URL = "jdbc:postgresql://localhost:5432/Kursovaya";
 
     //  Database credentials
-    static final String USER = "test";
-    static final String PASS = "test";
+    static final String USER = "postgres";
+    static final String PASS = "masha89106946323";
 
   
     public static void main(String[] args) {

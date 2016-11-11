@@ -4,8 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/calc.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/CurrentConditionsDisplay.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Client.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/WeatherData.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/patteny/Duck.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/Observer.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/Subject.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/WeatherStasion.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/patteny/Patter.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/DisplayElement.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Server.java</file>
         </group>
     </open-files>
