@@ -5,6 +5,7 @@
  */
 package Testing;
 
+import dotcom.Tester;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Test;

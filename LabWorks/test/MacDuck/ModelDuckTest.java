@@ -4,6 +4,10 @@
  */
 package MacDuck;
 
+import simuduck.MallardDuck;
+import simuduck.Duck;
+import simuduck.ModelDuck;
+import simuduck.RubberDuck;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

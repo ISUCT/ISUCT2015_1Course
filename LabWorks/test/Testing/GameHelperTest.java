@@ -4,6 +4,7 @@
  */
 package Testing;
 
+import dotcom.GameHelper;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;

@@ -1,7 +1,7 @@
 
 package Banana;
 
-import lab5.Plushka;
+import clien_server_calc.Plushka;
 import java.util.ArrayList;
 
 import org.junit.Test;
