@@ -14,7 +14,7 @@ public class Coffee {
 		System.out.println(beverage.getDescription() 
 				+ " $" + beverage.cost());
  
-		Beverage beverage2 = new DarkRoastCoffe();
+		Beverage beverage2 = new DarkRoastCoffee();
 		beverage2 = new Mocha(beverage2);
 		beverage2 = new Mocha(beverage2);
 		beverage2 = new Whip(beverage2);
