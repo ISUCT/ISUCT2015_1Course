@@ -4,17 +4,28 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/calc.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/CurrentConditionsDisplay.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/DarkRoast.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Client.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/jdbcsample/jdbcsample.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Coffee.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Soy.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/WeatherData.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/patteny/Duck.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/Observer.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Beverage.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/Subject.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Espresso.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/WeatherStasion.java</file>
-            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/patteny/Patter.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/DisplayElement.java</file>
             <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/Graph/Server.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Decaf.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/CurrentConditionsDisplay.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/patteny/Duck.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/CondimentDecorator.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Milk.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Whip.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/observer/Observer.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/HouseBlend.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/PatternyDecorator/Mocha.java</file>
+            <file>file:/C:/Workspace/ISUCT2015_1Course/LabWorks/src/patteny/Patter.java</file>
         </group>
     </open-files>
 </project-private>
