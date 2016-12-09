@@ -24,6 +24,7 @@ public class ParisStylePepperoniPizza extends Pizza {
                 
 	}
  
+    
 	void cut() {
 		System.out.println("Cutting the pizza into square slices");
 	}

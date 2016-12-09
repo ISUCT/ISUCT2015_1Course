@@ -21,6 +21,7 @@ public class ParisStyleVeggiePizza extends Pizza {
 		toppings.add("Tomato");
 	}
  
+   
 	void cut() {
 		System.out.println("Cutting the pizza into square slices");
 	}
